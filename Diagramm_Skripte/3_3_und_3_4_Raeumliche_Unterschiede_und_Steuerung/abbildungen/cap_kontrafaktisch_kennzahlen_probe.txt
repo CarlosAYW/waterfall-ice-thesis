@@ -1,0 +1,34 @@
+CAP-Kontrafaktum, Winter 2025/26, 4 Routen (c_CAP 6.5 K gegen 0), Stand 2026-09-25 11:40
+Nachbau 'CAP an' gegen gespeicherte Laeufe: max. Abweichung 2.3e-15 m
+
+Eistage (>= 0.15 m), CAP an minus aus:  Median +1.0, IQR +0.8 bis +1.0, Spanne +0.0 bis +1.0
+  Anteil Routen >0: 75 %, =0: 25 %, <0: 0 %
+Frostgradstunden (°C h), an minus aus: Median +155.0, IQR +120.5 bis +161.0, Spanne +35.1 bis +161.0
+Spitzendicke (m), an minus aus:         Median +0.005, IQR +0.004 bis +0.005
+Mitteltemperatur (K), an minus aus:     Median -0.08, Spanne -0.08 bis -0.01
+Spearman rho(delta_CAP, d_ice_days) = 0.82, p = 1.6e-01 (Normalnaeherung), n = 4
+Spearman rho(delta_CAP, d_fdh) = 0.33, p = 5.6e-01 (Normalnaeherung), n = 4
+
+Je Hoehenstufe (Median d_ice_days / d_fdh / delta_CAP, n):
+  <1500 m       +1.0 Tage /    +155 °C h / +0.04  (n = 4)
+  1500-2000 m   +nan Tage /    +nan °C h / +nan  (n = 0)
+  2000-2500 m   +nan Tage /    +nan °C h / +nan  (n = 0)
+  >2500 m       +nan Tage /    +nan °C h / +nan  (n = 0)
+
+CAP-Korrektur selbst (CAP an):
+  Mittel ueber Routen-Zeitschritte 0.06 K; Median der Routenmittel 0.08 K
+  Median der Zeitschritt-Mediane 0.05 K; 92. Perzentil (Median der Routen) 0.16 K
+  Anteil Zeitschritte > 1 K: 0.0 %; Anteil Routentage mit Tagesmittel > 1 K: 0.0 %
+  Anteil Zeitschritte mit f_stab > 0.5: 6.3 %
+
+Kommentar 70: Windfaktor an Frosttagen (Mittel ueber Frost-Zeitschritte) und Wachstum je °C h, Median je Route-Tag
+  Westwind lokal (INCA-Wind an der Route), 225-315 Grad: 1 % der Frost-Routentage
+    Routen N: Windfaktor nan (n=0) gegen nan (n=0) | Wachstum je °C h nan gegen nan mm
+    Routen E: Windfaktor nan (n=0) gegen nan (n=0) | Wachstum je °C h nan gegen nan mm
+    Routen S: Windfaktor nan (n=0) gegen nan (n=0) | Wachstum je °C h nan gegen nan mm
+    Routen W: Windfaktor 1.035 (n=4) gegen 1.005 (n=536) | Wachstum je °C h 0.552 gegen 0.527 mm
+  Westwind regional (mittlerer Wind aller Routen), 225-315 Grad: 1 % der Frost-Routentage
+    Routen N: Windfaktor nan (n=0) gegen nan (n=0) | Wachstum je °C h nan gegen nan mm
+    Routen E: Windfaktor nan (n=0) gegen nan (n=0) | Wachstum je °C h nan gegen nan mm
+    Routen S: Windfaktor nan (n=0) gegen nan (n=0) | Wachstum je °C h nan gegen nan mm
+    Routen W: Windfaktor 1.015 (n=4) gegen 1.005 (n=536) | Wachstum je °C h 0.513 gegen 0.527 mm

@@ -1,0 +1,3 @@
+[submodule "Ice fall modeling/GutHub/ice-waterfalls"]
+	path = Ice fall modeling/GutHub/ice-waterfalls
+	url = https://github.com/CarlosAYW/ice-waterfalls.git

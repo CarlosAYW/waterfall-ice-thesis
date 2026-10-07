@@ -1,0 +1,21 @@
+Faktoren-Kontrafaktum, Winter 2025/26, 303 Routen, Stand 2026-09-27 13:13
+Nachbau 'voll' gegen gespeicherte Laeufe: max. Abweichung 1.5e-14 m
+
+Wirkung auf die Eistage (>= 0.15 m); Faktoren: mit minus ohne; Referenz: gestoerter minus voller Lauf
+  Cold-air pooling (CAP term)                   Median +1.0, IQR +0.0 bis +9.0, 5-95 % -4.0 bis +24.0, Mittel +5.0
+      je Hoehenstufe (Median): <1500 m +4.0, 1500-2000 m +5.0, 2000-2500 m +4.0, >2500 m +0.0
+  Temperature inversions (measured profile)     Median +0.0, IQR -2.0 bis +6.0, 5-95 % -12.0 bis +24.8, Mittel +2.2
+      je Hoehenstufe (Median): <1500 m +1.0, 1500-2000 m +2.0, 2000-2500 m +0.0, >2500 m +0.0
+  Shortwave radiation (sun)                     Median +0.0, IQR -1.0 bis +0.0, 5-95 % -3.0 bis +0.0, Mittel -0.6
+      je Hoehenstufe (Median): <1500 m +0.0, 1500-2000 m +0.0, 2000-2500 m +0.0, >2500 m +0.0
+  Wind                                          Median +0.0, IQR +0.0 bis +1.0, 5-95 % -1.0 bis +4.0, Mittel +0.5
+      je Hoehenstufe (Median): <1500 m +0.0, 1500-2000 m +0.0, 2000-2500 m +0.0, >2500 m +1.0
+  Air dryness                                   Median +1.0, IQR +0.0 bis +2.0, 5-95 % +0.0 bis +5.0, Mittel +1.5
+      je Hoehenstufe (Median): <1500 m +1.0, 1500-2000 m +1.0, 2000-2500 m +1.0, >2500 m +1.0
+  Reference: 1 K colder (≈ 150 m higher)        Median +14.0, IQR +8.0 bis +22.5, 5-95 % +1.0 bis +31.0, Mittel +15.5
+      je Hoehenstufe (Median): <1500 m +19.0, 1500-2000 m +16.0, 2000-2500 m +16.0, >2500 m +7.0
+  Reference: 1 K warmer (≈ 150 m lower)         Median -18.0, IQR -25.0 bis -11.0, 5-95 % -37.0 bis -3.0, Mittel -18.2
+      je Hoehenstufe (Median): <1500 m -19.0, 1500-2000 m -22.0, 2000-2500 m -19.0, >2500 m -13.0
+
+Wirkung auf die Spitzendicke (m), Median je Faktor: cap +0.007, inv +0.001, sw +0.000, wind +0.003, dry +0.011
+Laufzeit 0 s, numba: False

@@ -1,0 +1,23 @@
+
+==== PROBELAUF ====
+Laeufe ok: 8 von 8
+Mittlere Dauer je Lauf: 73 s  ->  voller Lauf (2591 Laeufe, 6 parallel): ca. 8.8 h Rechenzeit
+  + INCA-Downloads fuer 2591 Routen-Winter (ca. 324 Abfragen)
+
+Ergebnisse je Route und Winter:
+ uid        band winter ice_days peak_m ok_share prof_share
+   1     <1500 m   2015       13  0.321    1.000      0.152
+ 182     >2500 m   2015      125  0.613    1.000      0.152
+ 183 2000-2500 m   2015      159  0.569    1.000      0.152
+  26 1500-2000 m   2015       94  0.438    1.000      0.152
+   1     <1500 m   2025       51  0.402    1.000      0.141
+ 182     >2500 m   2025      144  0.635    1.000      0.141
+ 183 2000-2500 m   2025      158  0.603    0.981      0.141
+  26 1500-2000 m   2025       90  0.465    1.000      0.141
+
+Vergleich 2025/26 mit dem bisherigen Lauf (Eistage >= 0.15 m):
+ uid        band ice_days peak_m ice_days_pub peak_pub diff_days
+   1     <1500 m       51  0.402           50    0.394         1
+ 182     >2500 m      144  0.635          144    0.632         0
+ 183 2000-2500 m      158  0.603          159    0.604        -1
+  26 1500-2000 m       90  0.465           90    0.459         0

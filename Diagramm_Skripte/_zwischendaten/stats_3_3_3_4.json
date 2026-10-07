@@ -1,0 +1,213 @@
+{
+  "n_runs": 303,
+  "good_days_by_band": {
+    "<1500 m": [
+      47.0,
+      27.5,
+      78.5
+    ],
+    "1500-2000 m": [
+      97.0,
+      78.0,
+      128.0
+    ],
+    "2000-2500 m": [
+      140.0,
+      106.0,
+      157.0
+    ],
+    ">2500 m": [
+      194.5,
+      171.75,
+      210.0
+    ]
+  },
+  "peak_by_band": {
+    "<1500 m": [
+      0.398,
+      0.378,
+      0.439
+    ],
+    "1500-2000 m": [
+      0.47,
+      0.426,
+      0.511
+    ],
+    "2000-2500 m": [
+      0.6,
+      0.53,
+      0.653
+    ],
+    ">2500 m": [
+      0.767,
+      0.723,
+      0.811
+    ]
+  },
+  "good_days_by_aspect": {
+    "N": [
+      104.0,
+      60.5,
+      163.0
+    ],
+    "E": [
+      83.0,
+      54.5,
+      122.5
+    ],
+    "S": [
+      78.0,
+      20.0,
+      128.0
+    ],
+    "W": [
+      109.0,
+      67.0,
+      131.0
+    ]
+  },
+  "n_by_aspect": {
+    "N": 199,
+    "E": 23,
+    "S": 27,
+    "W": 54
+  },
+  "good_days_by_cap": {
+    "weak": [
+      106.0,
+      57.25,
+      163.75
+    ],
+    "moderate": [
+      122.5,
+      70.25,
+      165.25
+    ],
+    "strong": [
+      88.0,
+      47.0,
+      119.0
+    ]
+  },
+  "rho_sun_gooddays": -0.164,
+  "rho_fdh_peak": 0.969,
+  "spearman_table": [
+    {
+      "driver": "Freezing degree-hours",
+      "resp": "Seasonal peak thickness",
+      "rho": 0.969,
+      "n": 303
+    },
+    {
+      "driver": "Freezing degree-hours",
+      "resp": "Ice days >= 0.15 m",
+      "rho": 0.97,
+      "n": 303
+    },
+    {
+      "driver": "Positive degree-hours",
+      "resp": "Seasonal peak thickness",
+      "rho": -0.947,
+      "n": 303
+    },
+    {
+      "driver": "Positive degree-hours",
+      "resp": "Ice days >= 0.15 m",
+      "rho": -0.945,
+      "n": 303
+    },
+    {
+      "driver": "Absorbed shortwave rad.",
+      "resp": "Seasonal peak thickness",
+      "rho": -0.151,
+      "n": 303
+    },
+    {
+      "driver": "Absorbed shortwave rad.",
+      "resp": "Ice days >= 0.15 m",
+      "rho": -0.134,
+      "n": 303
+    },
+    {
+      "driver": "Mean rel. humidity",
+      "resp": "Seasonal peak thickness",
+      "rho": 0.054,
+      "n": 303
+    },
+    {
+      "driver": "Mean rel. humidity",
+      "resp": "Ice days >= 0.15 m",
+      "rho": 0.018,
+      "n": 303
+    },
+    {
+      "driver": "Mean wind speed",
+      "resp": "Seasonal peak thickness",
+      "rho": 0.541,
+      "n": 303
+    },
+    {
+      "driver": "Mean wind speed",
+      "resp": "Ice days >= 0.15 m",
+      "rho": 0.524,
+      "n": 303
+    },
+    {
+      "driver": "DJF sun window",
+      "resp": "Seasonal peak thickness",
+      "rho": -0.176,
+      "n": 303
+    },
+    {
+      "driver": "DJF sun window",
+      "resp": "Ice days >= 0.15 m",
+      "rho": -0.164,
+      "n": 303
+    },
+    {
+      "driver": "CAP surplus",
+      "resp": "Seasonal peak thickness",
+      "rho": -0.199,
+      "n": 303
+    },
+    {
+      "driver": "CAP surplus",
+      "resp": "Ice days >= 0.15 m",
+      "rho": -0.186,
+      "n": 303
+    },
+    {
+      "driver": "Elevation",
+      "resp": "Seasonal peak thickness",
+      "rho": 0.863,
+      "n": 303
+    },
+    {
+      "driver": "Elevation",
+      "resp": "Ice days >= 0.15 m",
+      "rho": 0.877,
+      "n": 303
+    }
+  ],
+  "tlz_bin_growth_share_max": {
+    "(-20, -18]": 0.814,
+    "(-18, -16]": 0.769,
+    "(-16, -14]": 0.731,
+    "(-14, -12]": 0.634,
+    "(-12, -10]": 0.56,
+    "(-10, -8]": 0.562,
+    "(-8, -6]": 0.608,
+    "(-6, -4]": 0.621,
+    "(-4, -2]": 0.527,
+    "(-2, 0]": 0.265,
+    "(0, 2]": 0.04,
+    "(2, 4]": 0.019,
+    "(4, 6]": 0.008,
+    "(6, 8]": 0.0,
+    "(8, 10]": 0.0
+  },
+  "share_growth_below_minus8": 0.608,
+  "share_melt_above_2": 0.202,
+  "never_good_share": 0.0,
+  "routes_never_good": 0
+}

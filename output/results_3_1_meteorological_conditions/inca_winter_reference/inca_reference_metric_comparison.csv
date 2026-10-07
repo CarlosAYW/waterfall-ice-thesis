@@ -1,0 +1,10 @@
+metric,metric_label,unit,high_means,ref_n,ref_median,ref_p25,ref_p75,ref_min,ref_max,current,anomaly_vs_ref_median,rank_low_to_high,rank_high_to_low,all_n,percentile_low_to_high,current_vs_ref_range
+cold_degree_hours,Cold degree-hours,deg C h,cold,13,16972.5675,14351.0175,17755.7071875,13242.4575,22076.361875,15052.5759375,-1919.9915625000012,6,9,14,0.39285714285714285,inside reference IQR
+freezing_days,Days with median T < 0 deg C,days,cold,13,130,122,134,120,149,129,-1,7,8,14,0.4642857142857143,inside reference IQR
+longest_dry_spell_days,Longest dry spell (< 1 mm d-1),days,dry,13,15,12,20,10,32,15,0,7,7,14,0.4642857142857143,inside reference IQR
+max_cold_spell_days,Longest freezing spell,days,cold,13,38,32,50,19,70,64,26,12,3,14,0.8214285714285714,above reference IQR
+mean_temp_c,Mean air temperature,deg C,warm,13,-1.5236871282813782,-1.9465566037735849,-0.8546209751845776,-2.8571714135561934,-0.2725391282759812,-1.100522547239727,0.4231645810416511,8,7,14,0.5357142857142857,inside reference IQR
+positive_degree_hours,Positive degree-hours,deg C h,warm,13,9642.3059375,8144.7940625,11042.3896875,7871.799375,12382.869375,9680.805,38.499062500000946,8,7,14,0.5357142857142857,inside reference IQR
+precip_days_ge_1mm,Precipitation days >= 1 mm,days,wet,13,84,71,86,61,112,64,-20,2,13,14,0.10714285714285714,below reference IQR
+precip_total_mm,Total precipitation,mm,wet,13,530.9522812499999,413.06725,681.31746875,392.773125,743.7310625,376.15321875,-154.79906249999993,1,14,14,0.03571428571428571,below reference range
+spring_gl_total_mj_m2,Mar-Apr global radiation,MJ m-2,radiation,13,887.688063,869.647599,936.30525525,849.309773625,1004.8836015,941.48113725,53.793074249999904,11,4,14,0.75,above reference IQR

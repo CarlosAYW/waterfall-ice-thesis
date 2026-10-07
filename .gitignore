@@ -1,0 +1,70 @@
+# =============================================================================
+# Thesis repository = the local "Masterarbeit" working folder.
+# WHITELIST: everything is ignored unless explicitly released below.
+# Nothing is moved; all scripts keep their original relative paths.
+# =============================================================================
+/*
+!/.gitignore
+!/.gitmodules
+!/.gitattributes
+!/README.md
+!/requirements.txt
+!/CITATION.cff
+!/Diagramm_Skripte/
+!/FF2_Stationen/
+!/output/
+!/Ice fall modeling/
+
+# --- Diagramm_Skripte: figure scripts + frozen intermediate data ------------
+/Diagramm_Skripte/_Backup_alte_Versionen/
+/Diagramm_Skripte/_zwischendaten/_bloecke_*/
+/Diagramm_Skripte/3_6_Validierung/eingabe/
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+
+# --- FF2_Stationen: decadal station runs (scripts + results only) ------------
+/FF2_Stationen/*
+!/FF2_Stationen/01_stationscheck.R
+!/FF2_Stationen/02_ff2_modelllauf.R
+!/FF2_Stationen/ergebnis/
+!/FF2_Stationen/ergebnis_modell/
+
+# --- output: only files that the figure scripts READ (+ the Fig. 8/9 images) ---
+/output/*
+!/output/results_3_1_meteorological_conditions/
+/output/results_3_1_meteorological_conditions/*
+!/output/results_3_1_meteorological_conditions/station_temperature_daily_route_summary.csv
+!/output/results_3_1_meteorological_conditions/inca_winter_reference/
+/output/results_3_1_meteorological_conditions/inca_winter_reference/*
+!/output/results_3_1_meteorological_conditions/inca_winter_reference/*.csv
+!/output/results_3_3_to_3_6/
+/output/results_3_3_to_3_6/*
+!/output/results_3_3_to_3_6/fig_method_workflow.png
+!/output/results_3_3_to_3_6/fig_method_case.png
+!/output/study_area_map/
+/output/study_area_map/*
+!/output/study_area_map/_cache/
+/output/study_area_map/_cache/*
+!/output/study_area_map/_cache/osm_standard_tiles/
+/output/study_area_map/_cache/osm_standard_tiles/*
+!/output/study_area_map/_cache/osm_standard_tiles/10/
+
+# --- Model repository: git submodule at its original path -------------------
+/Ice fall modeling/*
+!/Ice fall modeling/GutHub/
+/Ice fall modeling/GutHub/*
+!/Ice fall modeling/GutHub/ice-waterfalls
+
+# --- Large files that no shipped figure script reads and that the pipeline ----
+# --- regenerates (README 4.3); SVG/PDF duplicates of Fig. 7 (PNG is kept) -----
+/Diagramm_Skripte/_zwischendaten/prep_uid_v2_daily_drivers.csv
+/Diagramm_Skripte/_zwischendaten/uid_daily_new.csv
+/Diagramm_Skripte/_zwischendaten/modelled_ice_uid_daily.csv
+/Diagramm_Skripte/_zwischendaten/uid_daily_full_new.pkl
+/Diagramm_Skripte/_zwischendaten/uid_daily_thick_new.pkl
+/Diagramm_Skripte/_zwischendaten/westwind_routentage.csv
+/Diagramm_Skripte/_zwischendaten/cap_kontra_tage.csv
+/Diagramm_Skripte/2_1_Untersuchungsgebiet/abbildungen/*.svg
+/Diagramm_Skripte/2_1_Untersuchungsgebiet/abbildungen/*.pdf

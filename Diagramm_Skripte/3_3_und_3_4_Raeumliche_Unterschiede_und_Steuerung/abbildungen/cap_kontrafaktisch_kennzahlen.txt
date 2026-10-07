@@ -1,0 +1,34 @@
+CAP-Kontrafaktum, Winter 2025/26, 303 Routen (c_CAP 6.5 K gegen 0), Stand 2026-09-25 11:43
+Nachbau 'CAP an' gegen gespeicherte Laeufe: max. Abweichung 1.5e-14 m
+
+Eistage (>= 0.15 m), CAP an minus aus:  Median +1.0, IQR +0.0 bis +9.0, Spanne -20.0 bis +43.0
+  Anteil Routen >0: 57 %, =0: 28 %, <0: 15 %
+Frostgradstunden (°C h), an minus aus: Median +351.3, IQR -5.4 bis +983.4, Spanne -2543.7 bis +3465.5
+Spitzendicke (m), an minus aus:         Median +0.007, IQR -0.000 bis +0.022
+Mitteltemperatur (K), an minus aus:     Median -0.13, Spanne -1.28 bis +0.78
+Spearman rho(delta_CAP, d_ice_days) = 0.82, p = 2.1e-46 (Normalnaeherung), n = 303
+Spearman rho(delta_CAP, d_fdh) = 0.91, p = 5.3e-56 (Normalnaeherung), n = 303
+
+Je Hoehenstufe (Median d_ice_days / d_fdh / delta_CAP, n):
+  <1500 m       +4.0 Tage /    +351 °C h / +0.12  (n = 103)
+  1500-2000 m   +5.0 Tage /    +554 °C h / +0.25  (n = 95)
+  2000-2500 m   +4.0 Tage /    +774 °C h / +0.26  (n = 45)
+  >2500 m       +0.0 Tage /     +62 °C h / +0.06  (n = 60)
+
+CAP-Korrektur selbst (CAP an):
+  Mittel ueber Routen-Zeitschritte 0.23 K; Median der Routenmittel 0.13 K
+  Median der Zeitschritt-Mediane 0.00 K; 92. Perzentil (Median der Routen) 0.37 K
+  Anteil Zeitschritte > 1 K: 9.5 %; Anteil Routentage mit Tagesmittel > 1 K: 7.1 %
+  Anteil Zeitschritte mit f_stab > 0.5: 5.7 %
+
+Kommentar 70: Windfaktor an Frosttagen (Mittel ueber Frost-Zeitschritte) und Wachstum je °C h, Median je Route-Tag
+  Westwind lokal (INCA-Wind an der Route), 225-315 Grad: 28 % der Frost-Routentage
+    Routen N: Windfaktor 1.028 (n=9906) gegen 1.010 (n=21820) | Wachstum je °C h 0.555 gegen 0.540 mm
+    Routen E: Windfaktor 1.029 (n=1059) gegen 1.023 (n=2375) | Wachstum je °C h 0.581 gegen 0.544 mm
+    Routen S: Windfaktor 1.057 (n=972) gegen 1.006 (n=2825) | Wachstum je °C h 0.565 gegen 0.542 mm
+    Routen W: Windfaktor 1.034 (n=1398) gegen 1.006 (n=6554) | Wachstum je °C h 0.563 gegen 0.542 mm
+  Westwind regional (mittlerer Wind aller Routen), 225-315 Grad: 35 % der Frost-Routentage
+    Routen N: Windfaktor 1.019 (n=11120) gegen 1.012 (n=20606) | Wachstum je °C h 0.545 gegen 0.543 mm
+    Routen E: Windfaktor 1.026 (n=1229) gegen 1.022 (n=2205) | Wachstum je °C h 0.549 gegen 0.549 mm
+    Routen S: Windfaktor 1.008 (n=1340) gegen 1.009 (n=2457) | Wachstum je °C h 0.545 gegen 0.548 mm
+    Routen W: Windfaktor 1.013 (n=2775) gegen 1.006 (n=5177) | Wachstum je °C h 0.546 gegen 0.543 mm

@@ -1,0 +1,9 @@
+# Figure scripts in Diagramm_Skripte/ - tested with Python 3.10.12 on 7 Oct 2026
+numpy>=2.2.6
+pandas>=2.3.3
+matplotlib>=3.10.9
+scipy>=1.15.3
+pillow>=12.3.0
+pyreadr>=0.5.7
+# Only for Fig. 7 (2_1_Untersuchungsgebiet/build_study_area_map.py):
+#   python -m pip install pyproj pyshp rasterio

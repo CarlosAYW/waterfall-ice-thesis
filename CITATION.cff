@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you refer to this work, please cite the master's thesis."
+title: "Waterfall Ice in Tyrol - Thesis Repository"
+type: software
+authors:
+  - family-names: Wydra
+    given-names: Carlos
+    email: carlos.wydra@edu.uni-graz.at
+    affiliation: "University of Graz"
+repository-code: "https://github.com/CarlosAYW/waterfall-ice-thesis"
+license-url: "https://github.com/CarlosAYW/waterfall-ice-thesis#9-citation-and-licence"
+preferred-citation:
+  type: thesis
+  title: "A Meteorologically Driven Model of Waterfall Ice Growth in Tyrol: Thickness, Seasonality and Climate Sensitivity"
+  authors:
+    - family-names: Wydra
+      given-names: Carlos
+  thesis-type: "Master's thesis"
+  institution:
+    name: "University of Graz"
+    city: Graz
+    country: AT
+  year: 2026

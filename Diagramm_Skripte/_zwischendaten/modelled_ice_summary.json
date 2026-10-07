@@ -1,0 +1,321 @@
+{
+  "model_source": "/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/Ice fall modeling/GutHub/ice-waterfalls/data/ModelRuns",
+  "target_end_date": "2026-04-30",
+  "n_available_model_files": 303,
+  "n_complete_model_runs": 303,
+  "phase_threshold_m_per_day": 0.005,
+  "period": {
+    "start": "2025-10-01",
+    "end": "2026-04-30"
+  },
+  "growth_periods": [
+    {
+      "start": "2025-10-24",
+      "end": "2025-10-24",
+      "days": 1,
+      "median_delta_sum_m": 0.01294535206488411,
+      "mean_value": 0.01294535206488411,
+      "median_thickness_end_m": 0.008528590978587498
+    },
+    {
+      "start": "2025-10-26",
+      "end": "2025-10-27",
+      "days": 2,
+      "median_delta_sum_m": 0.032239098753265194,
+      "mean_value": 0.016119549376632597,
+      "median_thickness_end_m": 0.0300466763253473
+    },
+    {
+      "start": "2025-11-03",
+      "end": "2025-11-03",
+      "days": 1,
+      "median_delta_sum_m": 0.0071792507336525,
+      "mean_value": 0.0071792507336525,
+      "median_thickness_end_m": 0.0037927548073496
+    },
+    {
+      "start": "2025-11-17",
+      "end": "2025-11-23",
+      "days": 7,
+      "median_delta_sum_m": 0.254229203088937,
+      "mean_value": 0.03631845758413386,
+      "median_thickness_end_m": 0.2619120243687808
+    },
+    {
+      "start": "2025-11-25",
+      "end": "2025-11-28",
+      "days": 4,
+      "median_delta_sum_m": 0.05547974393434185,
+      "mean_value": 0.013869935983585463,
+      "median_thickness_end_m": 0.31963188452003255
+    },
+    {
+      "start": "2025-12-03",
+      "end": "2025-12-03",
+      "days": 1,
+      "median_delta_sum_m": 0.006413079020277546,
+      "mean_value": 0.006413079020277546,
+      "median_thickness_end_m": 0.32512037897790724
+    },
+    {
+      "start": "2025-12-05",
+      "end": "2025-12-05",
+      "days": 1,
+      "median_delta_sum_m": 0.006960308758891698,
+      "mean_value": 0.006960308758891698,
+      "median_thickness_end_m": 0.3313812157596836
+    },
+    {
+      "start": "2025-12-24",
+      "end": "2025-12-25",
+      "days": 2,
+      "median_delta_sum_m": 0.041147709858845014,
+      "mean_value": 0.020573854929422507,
+      "median_thickness_end_m": 0.11472749828537224
+    },
+    {
+      "start": "2025-12-30",
+      "end": "2026-01-08",
+      "days": 10,
+      "median_delta_sum_m": 0.23481092533666736,
+      "mean_value": 0.023481092533666738,
+      "median_thickness_end_m": 0.41882289895118746
+    },
+    {
+      "start": "2026-01-10",
+      "end": "2026-01-11",
+      "days": 2,
+      "median_delta_sum_m": 0.020805147824767722,
+      "mean_value": 0.010402573912383861,
+      "median_thickness_end_m": 0.44536419073339795
+    },
+    {
+      "start": "2026-01-26",
+      "end": "2026-01-26",
+      "days": 1,
+      "median_delta_sum_m": 0.006259165008200007,
+      "mean_value": 0.006259165008200007,
+      "median_thickness_end_m": 0.4006857222287086
+    },
+    {
+      "start": "2026-01-30",
+      "end": "2026-01-30",
+      "days": 1,
+      "median_delta_sum_m": 0.005331110596356159,
+      "mean_value": 0.005331110596356159,
+      "median_thickness_end_m": 0.41253220737676044
+    },
+    {
+      "start": "2026-02-01",
+      "end": "2026-02-01",
+      "days": 1,
+      "median_delta_sum_m": 0.006830171368977601,
+      "mean_value": 0.006830171368977601,
+      "median_thickness_end_m": 0.4243419337056785
+    },
+    {
+      "start": "2026-02-15",
+      "end": "2026-02-15",
+      "days": 1,
+      "median_delta_sum_m": 0.007415139213993616,
+      "mean_value": 0.007415139213993616,
+      "median_thickness_end_m": 0.4105817449702873
+    },
+    {
+      "start": "2026-02-17",
+      "end": "2026-02-17",
+      "days": 1,
+      "median_delta_sum_m": 0.006774298784006594,
+      "mean_value": 0.006774298784006594,
+      "median_thickness_end_m": 0.4286743740402005
+    },
+    {
+      "start": "2026-03-17",
+      "end": "2026-03-17",
+      "days": 1,
+      "median_delta_sum_m": 0.006210347722918008,
+      "mean_value": 0.006210347722918008,
+      "median_thickness_end_m": 0.06383560686245576
+    },
+    {
+      "start": "2026-03-26",
+      "end": "2026-04-01",
+      "days": 7,
+      "median_delta_sum_m": 0.09173281234886933,
+      "mean_value": 0.013104687478409904,
+      "median_thickness_end_m": 0.2933023006461366
+    }
+  ],
+  "cold_periods": [
+    {
+      "start": "2025-11-18",
+      "end": "2025-11-23",
+      "days": 6,
+      "median_delta_sum_m": 0.2345609314555307,
+      "mean_value": -6.980592517866822,
+      "median_thickness_end_m": 0.2619120243687808
+    },
+    {
+      "start": "2025-11-25",
+      "end": "2025-11-28",
+      "days": 4,
+      "median_delta_sum_m": 0.05547974393434185,
+      "mean_value": -5.420261842937242,
+      "median_thickness_end_m": 0.31963188452003255
+    },
+    {
+      "start": "2025-12-03",
+      "end": "2025-12-03",
+      "days": 1,
+      "median_delta_sum_m": 0.006413079020277546,
+      "mean_value": -3.4977653808593754,
+      "median_thickness_end_m": 0.32512037897790724
+    },
+    {
+      "start": "2025-12-05",
+      "end": "2025-12-05",
+      "days": 1,
+      "median_delta_sum_m": 0.006960308758891698,
+      "mean_value": -3.383398379132902,
+      "median_thickness_end_m": 0.3313812157596836
+    },
+    {
+      "start": "2025-12-24",
+      "end": "2025-12-25",
+      "days": 2,
+      "median_delta_sum_m": 0.041147709858845014,
+      "mean_value": -4.631948087941785,
+      "median_thickness_end_m": 0.11472749828537224
+    },
+    {
+      "start": "2025-12-30",
+      "end": "2026-01-12",
+      "days": 14,
+      "median_delta_sum_m": 0.26228406647382263,
+      "mean_value": -8.771001734805381,
+      "median_thickness_end_m": 0.45627141201952476
+    },
+    {
+      "start": "2026-01-21",
+      "end": "2026-01-22",
+      "days": 2,
+      "median_delta_sum_m": 0.005684034252978993,
+      "mean_value": -3.5382050663466877,
+      "median_thickness_end_m": 0.3864288587848545
+    },
+    {
+      "start": "2026-01-26",
+      "end": "2026-01-26",
+      "days": 1,
+      "median_delta_sum_m": 0.006259165008200007,
+      "mean_value": -5.388869296720897,
+      "median_thickness_end_m": 0.4006857222287086
+    },
+    {
+      "start": "2026-01-29",
+      "end": "2026-02-02",
+      "days": 5,
+      "median_delta_sum_m": 0.024087297781848184,
+      "mean_value": -4.755451521614853,
+      "median_thickness_end_m": 0.43102530723380217
+    },
+    {
+      "start": "2026-02-08",
+      "end": "2026-02-09",
+      "days": 2,
+      "median_delta_sum_m": 0.0036514731485007834,
+      "mean_value": -3.653792036122215,
+      "median_thickness_end_m": 0.42268272999742745
+    },
+    {
+      "start": "2026-02-15",
+      "end": "2026-02-18",
+      "days": 4,
+      "median_delta_sum_m": 0.022163098131176,
+      "mean_value": -5.330933370932951,
+      "median_thickness_end_m": 0.4411265029019438
+    },
+    {
+      "start": "2026-02-20",
+      "end": "2026-02-20",
+      "days": 1,
+      "median_delta_sum_m": 0.003337213582391363,
+      "mean_value": -3.8376331380208333,
+      "median_thickness_end_m": 0.4504857833533067
+    },
+    {
+      "start": "2026-03-17",
+      "end": "2026-03-18",
+      "days": 2,
+      "median_delta_sum_m": 0.010890231244012283,
+      "mean_value": -3.553254097697317,
+      "median_thickness_end_m": 0.10230443192861821
+    },
+    {
+      "start": "2026-03-26",
+      "end": "2026-04-02",
+      "days": 8,
+      "median_delta_sum_m": 0.09407645272172864,
+      "mean_value": -5.476336413407686,
+      "median_thickness_end_m": 0.3033202583477429
+    }
+  ],
+  "melt_periods": [
+    {
+      "start": "2025-10-01",
+      "end": "2025-10-01",
+      "days": 1,
+      "median_delta_sum_m": -0.008783911680016701,
+      "mean_value": -0.008783911680016701,
+      "median_thickness_end_m": 0.01660663255986195
+    },
+    {
+      "start": "2025-11-04",
+      "end": "2025-11-04",
+      "days": 1,
+      "median_delta_sum_m": -0.0068209351199102,
+      "mean_value": -0.0068209351199102,
+      "median_thickness_end_m": 0.0
+    },
+    {
+      "start": "2025-12-08",
+      "end": "2025-12-10",
+      "days": 3,
+      "median_delta_sum_m": -0.05391968261501462,
+      "mean_value": -0.017973227538338205,
+      "median_thickness_end_m": 0.21327383345459025
+    },
+    {
+      "start": "2026-01-13",
+      "end": "2026-01-17",
+      "days": 5,
+      "median_delta_sum_m": -0.04454781635087768,
+      "mean_value": -0.008909563270175535,
+      "median_thickness_end_m": 0.39964728557061036
+    },
+    {
+      "start": "2026-02-22",
+      "end": "2026-02-22",
+      "days": 1,
+      "median_delta_sum_m": -0.009877201165136573,
+      "mean_value": -0.009877201165136573,
+      "median_thickness_end_m": 0.4479342094658622
+    },
+    {
+      "start": "2026-02-25",
+      "end": "2026-02-27",
+      "days": 3,
+      "median_delta_sum_m": -0.058513054132146136,
+      "mean_value": -0.019504351377382045,
+      "median_thickness_end_m": 0.22196445074458798
+    },
+    {
+      "start": "2026-04-04",
+      "end": "2026-04-06",
+      "days": 3,
+      "median_delta_sum_m": -0.0692536366767991,
+      "mean_value": -0.023084545558933033,
+      "median_thickness_end_m": 0.0672202238731593
+    }
+  ]
+}

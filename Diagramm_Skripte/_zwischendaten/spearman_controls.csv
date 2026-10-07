@@ -1,0 +1,17 @@
+driver,resp,rho,n
+Freezing degree-hours,Seasonal peak thickness,0.9693706009540967,303
+Freezing degree-hours,Ice days >= 0.15 m,0.9698217022872709,303
+Positive degree-hours,Seasonal peak thickness,-0.9473501326082375,303
+Positive degree-hours,Ice days >= 0.15 m,-0.9454466603768896,303
+Absorbed shortwave rad.,Seasonal peak thickness,-0.15053127714220338,303
+Absorbed shortwave rad.,Ice days >= 0.15 m,-0.13392419627684488,303
+Mean rel. humidity,Seasonal peak thickness,0.053625079139585745,303
+Mean rel. humidity,Ice days >= 0.15 m,0.017547861041565672,303
+Mean wind speed,Seasonal peak thickness,0.5409203837268364,303
+Mean wind speed,Ice days >= 0.15 m,0.5236926837479602,303
+DJF sun window,Seasonal peak thickness,-0.1763127441104601,303
+DJF sun window,Ice days >= 0.15 m,-0.16411461219304213,303
+CAP surplus,Seasonal peak thickness,-0.1992016309790235,303
+CAP surplus,Ice days >= 0.15 m,-0.18622583813371815,303
+Elevation,Seasonal peak thickness,0.8625615141447196,303
+Elevation,Ice days >= 0.15 m,0.8767651549946635,303

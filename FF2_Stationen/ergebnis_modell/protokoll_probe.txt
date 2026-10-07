@@ -1,0 +1,11 @@
+15:28:29  ==== FF2 Modelllauf, Modus probe ==== 
+15:28:29  Routen im Auswahlkriterium (>= 10 Winter, >= 4 je Haelfte): 196  [<1500 m: 82, 1500-2000 m: 63, 2000-2500 m: 26, >2500 m: 25] 
+15:28:29  Modelllaeufe in diesem Durchgang: 8 (Route x Winter) 
+15:28:30  INCA: lade 8 Routen-Winter (UU, VV, GL, RH2M) ... 
+15:28:34    INCA 2015/16: Block 1/1 fertig 
+15:28:38    INCA 2025/26: Block 1/1 fertig 
+15:28:38  Inversion je Winter ... 
+15:29:07  Modelllaeufe: 8, parallel: 6 
+15:31:35    8/8 Laeufe (100%), 2 min vergangen, noch ca. 0 min 
+15:31:44  Probelauf fertig. Ergebnis: C:/Users/Alien/OneDrive - Universität Graz/Graz/Masterarbeit/FF2_Stationen/ergebnis_modell/probe_ergebnis.txt 
+15:31:44  Wenn alles passt: oben MODUS <- "voll" setzen und erneut auf Source klicken. 

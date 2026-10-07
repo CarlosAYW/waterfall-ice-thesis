@@ -1,0 +1,48 @@
+{
+ "export": "09-27_validation_results_export.csv",
+ "review_cases_all": 83,
+ "review_unclear": 5,
+ "review_conclusive": 78,
+ "review_icefalls_all": 32,
+ "review_icefalls": 30,
+ "review_period": [
+  "2025-11-22",
+  "2026-04-06"
+ ],
+ "review_sources_all": {
+  "messaging group": 75,
+  "upload form": 8
+ },
+ "review_sources_conclusive": {
+  "messaging group": 70,
+  "upload form": 8
+ },
+ "decisions": {
+  "matches": 64,
+  "model_too_little_ice": 10,
+  "does_not_fit": 2,
+  "model_too_much_ice": 2
+ },
+ "matches_pct": 82.1,
+ "report_days_classified": 99,
+ "report_icefalls_classified": 58,
+ "class_days": 96,
+ "class_uids": 56,
+ "class_days_website": 13,
+ "exact": 38,
+ "exact_pct": 39.6,
+ "within1_pct": 96.9,
+ "two_off": 3,
+ "model_higher": 51,
+ "model_lower": 7,
+ "median_th": {
+  "poor": 0.02,
+  "medium": 0.413,
+  "good": 0.428
+ },
+ "obs_n": {
+  "poor": 3,
+  "medium": 57,
+  "good": 36
+ }
+}
