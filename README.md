@@ -12,7 +12,7 @@ This repository holds the code, the intermediate data and the figure scripts beh
 - **1** (Fig. 7) additionally downloads basemaps,
 - **9** need the per-route model runs (≈ 8 GB, regenerable) and/or private validation photographs.
 
-> **Relation to `ice-waterfalls`.** The thesis cites [github.com/CarlosAYW/ice-waterfalls](https://github.com/CarlosAYW/ice-waterfalls) (model and operational map). That repository is included here as a **git submodule at `Ice fall modeling/GitHub/ice-waterfalls`, pinned to its tag `thesis-submission`**, i.e. the exact model version used in the thesis. Its `main` branch and the [interactive map](https://carlosayw.github.io/ice-waterfalls/) keep running daily and may differ from the thesis version.
+> **Relation to `ice-waterfalls`.** The thesis cites [github.com/CarlosAYW/ice-waterfalls](https://github.com/CarlosAYW/ice-waterfalls) (model and operational map). That repository is included here as a **git submodule at `Ice fall modeling/GitHub/ice-waterfalls`, pinned to its tag `thesis-submission`**, i.e. the model code exactly as used for the thesis runs (one error in that code, found after the runs, is described in [README 8](#8-known-limitations)). Its `main` branch and the [interactive map](https://carlosayw.github.io/ice-waterfalls/) keep running daily and may differ from the thesis version.
 
 ## Reviewer quick guide
 
@@ -129,7 +129,7 @@ Model code links point to the tagged thesis version of `ice-waterfalls`.
 | 2.1 | study area, route inventory | [`data/Koordinaten_Wasserfaelle/`](https://github.com/CarlosAYW/ice-waterfalls/tree/thesis-submission/data/Koordinaten_Wasserfaelle); the 303 route IDs used: `Diagramm_Skripte/_zwischendaten/uid_static.csv` |
 | 2.2.2 | input preparation: station assignment, DEM inputs, sun windows, wind shelter | [`scripts/add_new_icefalls.R`](https://github.com/CarlosAYW/ice-waterfalls/blob/thesis-submission/scripts/add_new_icefalls.R) |
 | 2.2.2 | cold-air-pooling index | [`analysis/cold_air_pooling/05_build_cap_index.R`](https://github.com/CarlosAYW/ice-waterfalls/blob/thesis-submission/analysis/cold_air_pooling/05_build_cap_index.R) |
-| 2.2.4–2.2.7 | forcing, topographic modifiers, ice thickness, output | [`scripts/diagram_uid.R`](https://github.com/CarlosAYW/ice-waterfalls/blob/thesis-submission/scripts/diagram_uid.R) |
+| 2.2.4–2.2.7 | forcing, topographic modifiers, ice thickness, output | [`scripts/diagram_uid.R`](https://github.com/CarlosAYW/ice-waterfalls/blob/thesis-submission/scripts/diagram_uid.R) (solar term of the ice core inactive in the thesis runs, README 8) |
 | 2.2.5 | three-station inversion monitoring | [`scripts/00_build_inversion_cache.R`](https://github.com/CarlosAYW/ice-waterfalls/blob/thesis-submission/scripts/00_build_inversion_cache.R) |
 | 2.2.8 | photo review: review interface, case building, decision export | [`analysis/Icefall_validation/Review_Tool/`](https://github.com/CarlosAYW/ice-waterfalls/tree/thesis-submission/analysis/Icefall_validation/Review_Tool) (photographs not included, README 6) |
 | 2.3 | decadal runs and trend analysis | [`FF2_Stationen/01_stationscheck.R`](FF2_Stationen/01_stationscheck.R), [`FF2_Stationen/02_ff2_modelllauf.R`](FF2_Stationen/02_ff2_modelllauf.R) |
@@ -290,6 +290,7 @@ flowchart LR
 
 ## 8 Known limitations
 
+- **Error in the model code of the thesis runs.** In [`scripts/diagram_uid.R`](https://github.com/CarlosAYW/ice-waterfalls/blob/thesis-submission/scripts/diagram_uid.R#L1212-L1222) (lines 1214 and 1221) `wx$solar_core_fac` lacks the time-step index `[i]` in the core-melt factor and in the loss of the core reserve. The whole seasonal vector then enters `min()`/`max()`, which pick its smallest value (0), so the solar term of the ice core described in § 2.2.6 was inactive in all thesis runs (season 2025/26 and decadal runs). The error was found after the runs. The tag keeps the code as used, so that reruns reproduce the thesis results; the correction is the [following commit](https://github.com/CarlosAYW/ice-waterfalls/commit/210d295bb8cdc4dd0f5f9d78ac9996c28d7bcfe7) on `main` of `ice-waterfalls`. Its effect on the thesis results has not been quantified; with the correction, routes with sun on the ice core lose core ice faster.
 - Some file names in `Diagramm_Skripte/` still carry older figure or section numbers (e.g. `build_fig2628.py` makes Fig. 32, `fig_3_7_homogeneity.png` belongs to § 3.6); the figure index is authoritative. The section folders themselves follow the thesis numbering.
 - `3_6_und_3_7_…/szenario_trajektorien.py` reconstructs a lost original script from the method description; against the trajectory files used in the thesis it deviates by at most 0.1 ice days.
 - The batch script for the thesis model runs is not preserved; README 4.3 gives a loop that calls the model in the same way (untested).

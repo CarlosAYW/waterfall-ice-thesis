@@ -16,11 +16,12 @@ Alles andere bleibt identisch: dieselben Antriebsdaten (Stationen + INCA), dasse
 10-min-Raster, dieselben Horizont- und Wind-Lookups, dieselbe Schwelle 0.15 m.
 Nichts wird neu heruntergeladen.
 
-Hinweis zum Modellcode: In der Fassung von diagram_uid.R, mit der die Laeufe vom
-27.07.2026 gerechnet wurden, fehlte bei wx$solar_core_fac (heute Zeilen 1214 und
-1221) der Index [i]. R bildete dadurch das Minimum ueber die ganze
-Saison, und der Sonnenanteil der Kernschmelze und des Reserve-Abbaus ist in den
-gespeicherten Laeufen praktisch null. Dieses Skript bildet die Laeufe so nach, wie
+Hinweis zum Modellcode: In der Fassung von diagram_uid.R, mit der die Laeufe der
+Arbeit gerechnet wurden (Tag thesis-submission, Zeilen 1214 und 1221), fehlt bei
+wx$solar_core_fac der Index [i]; auf main ist das korrigiert. R bildet dadurch das
+Minimum ueber die ganze Saison, und der Sonnenanteil der Kernschmelze und des
+Reserve-Abbaus ist in den gespeicherten Laeufen praktisch null. Dieses Skript
+bildet die Laeufe so nach, wie
 sie gerechnet wurden (SONNE_IM_KERN = False); nur so trifft "CAP an" die Laeufe,
 auf denen die Arbeit beruht.
 

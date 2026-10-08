@@ -1,3 +1,4 @@
 [submodule "Ice fall modeling/GitHub/ice-waterfalls"]
 	path = Ice fall modeling/GitHub/ice-waterfalls
 	url = https://github.com/CarlosAYW/ice-waterfalls.git
+	ignore = all
