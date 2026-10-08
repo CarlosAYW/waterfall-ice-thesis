@@ -78,7 +78,7 @@ get_script_dir <- function() {
   getwd()
 }
 BASE  <- get_script_dir()
-REPO  <- normalizePath(file.path(BASE, "..", "Ice fall modeling", "GutHub", "ice-waterfalls"),
+REPO  <- normalizePath(file.path(BASE, "..", "Ice fall modeling", "GitHub", "ice-waterfalls"),
                        mustWork = FALSE)
 ERG1  <- file.path(BASE, "ergebnis")
 CACHE <- file.path(BASE, "cache")
@@ -698,7 +698,7 @@ if (MODUS == "probe") {
   Df <- D[D$uid %in% full_uids, ]
   Df$plot_date <- as.Date("2000-10-01") + as.numeric(Df$date - as.Date(sprintf("%d-10-01", Df$winter)))
   sa <- stats::aggregate(thickness_m ~ winter + plot_date, Df, stats::median)
-  # Saisonverlauf fuer die Arbeit (Diagramm_Skripte/3_7_und_3_8_.../build_fig_3_7_stationen.py)
+  # Saisonverlauf fuer die Arbeit (Diagramm_Skripte/3_6_und_3_7_.../build_fig_3_7_stationen.py)
   sv <- stats::aggregate(thickness_m ~ winter + date, Df, stats::median)
   sv$n_routes <- stats::aggregate(thickness_m ~ winter + date, Df, length)$thickness_m
   write.csv(sv[order(sv$winter, sv$date), ], file.path(OUT, "tabellen", "saisonverlauf_routen_alle_winter.csv"),

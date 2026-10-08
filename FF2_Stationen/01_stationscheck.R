@@ -44,7 +44,7 @@ get_script_dir <- function() {
   getwd()
 }
 BASE   <- get_script_dir()
-ASSIGN <- file.path(BASE, "..", "Ice fall modeling", "GutHub", "ice-waterfalls",
+ASSIGN <- file.path(BASE, "..", "Ice fall modeling", "GitHub", "ice-waterfalls",
                     "data", "AWS", "icefalls_nearest_station.csv")
 if (!file.exists(ASSIGN)) {
   stop("Stationszuordnung nicht gefunden:\n  ", normalizePath(ASSIGN, mustWork = FALSE),

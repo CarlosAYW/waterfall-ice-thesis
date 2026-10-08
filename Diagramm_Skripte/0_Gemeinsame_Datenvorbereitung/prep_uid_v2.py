@@ -24,7 +24,7 @@ from pfade import MA, REPO, OUTPUT, ZWISCHEN, bloecke
 WORKSPACE = MA
 OUT_DIR = ZWISCHEN
 BLOCKDIR = ZWISCHEN / "_bloecke_prep_uid_v2"
-REPO = WORKSPACE / "Ice fall modeling" / "GutHub" / "ice-waterfalls"
+REPO = WORKSPACE / "Ice fall modeling" / "GitHub" / "ice-waterfalls"
 MODEL_DIR = REPO / "data" / "ModelRuns"
 TARGET_END = "2026-04-30"
 

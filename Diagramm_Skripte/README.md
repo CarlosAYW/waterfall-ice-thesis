@@ -1,5 +1,7 @@
 # Diagramm-Skripte der Masterarbeit
 
+> Arbeitsprotokoll bis 29.09.2026. Abbildungs- und Kapitelnummern in der Tabelle unten sind der damalige Stand. Maßgeblich sind die Abbildungsübersicht und die Pfadregeln in `README.md` im Hauptordner. Seit 08.10.2026 tragen die Kapitelordner die Nummern der Arbeit: `3_5_Validierung` (vorher `3_6_Validierung`), `3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien` (vorher `3_7_und_3_8_…`); die nicht mehr verwendete CAP-Kalibrierung liegt in `Archiv_Cold-Air-Pooling-Korrektur` (vorher `3_5_Cold-Air-Pooling-Korrektur`). Das Modell-Repo liegt unter `Ice fall modeling/GitHub/ice-waterfalls` (vorher `…/GutHub/…`).
+
 Stand: 25.09.2026 (Abbildungsnummern nach dem Umbau von Kap. 3.1; die frühere INCA-Referenz, Abb. 15–17, ist durch eine Abbildung ersetzt: Aufbau wie die frühere Abb. 16, Temperatur jetzt aus den Stationen; alle späteren Nummern sind um 2 kleiner). Je Abbildung liegt hier die Skriptversion, die die Abbildung in `Masterarbeit.docx` erzeugt hat. Die Zuordnung ist über MD5-Vergleich der eingebetteten Bilder mit den Ausgabedateien geprüft; Abb. 7 und 21 sind im Dokument nicht bytegleich abgelegt und wurden über Pixelvergleich zugeordnet (bei Abb. 21 unterscheidet sich nur der Bereich des Nordpfeils). Ältere Fassungen liegen in `_Backup_alte_Versionen/`, dort mit ihrem ursprünglichen Pfad; `Verschiebeprotokoll.csv` listet jede verschobene Datei mit altem und neuem Ort.
 
 Die erzeugten Bilder (PNG/PDF) wurden nicht verschoben, sie liegen weiter unter `output/...`.
@@ -18,14 +20,14 @@ Die erzeugten Bilder (PNG/PDF) wurden nicht verschoben, sie liegen weiter unter 
 | 18 | 3.2 | `3_2_.../build_allfalls.py` | `output/opus48/figs_new/fig_3_2_all_routes.png` | Caches aus `prep_caches.py`, `uid_season_metrics.csv` aus `build_3_34.py` |
 | 19, 20, 22, 23 | 3.3, 3.4 | `3_3_und_3_4_.../build_3_34.py` (seit 27.09.2026: Abb. 23b zeigt statt der Spearman-Balken die direkte Wirkung der Faktoren aus `faktoren_kontrafaktisch.py` – das muss vorher gelaufen sein, `_zwischendaten/faktoren_kontra_routen.csv`; Abb. 20 mit gemeinsamer Legende der Höhenstufen unter der Abbildung, weil sie in 20b Punkte verdeckte; seit 25.09.2026: Abb. 22b auf −5 bis +5 °C, Titel von 23b mit n aus den Daten statt fest „n = 320“; Ausgabe jetzt in `3_3_und_3_4_.../abbildungen`) | `output/opus48/figs_new/fig_3_3_elevation.png`, `fig_3_3_aspect_sun_cap.png`, `fig_3_4_thermal_window.png`, `fig_3_4_seasonal_controls.png` | Caches aus `prep_caches.py`; für Abb. 20c zusätzlich `_zwischendaten/cap_kontra_routen.csv` aus `3_3_und_3_4_.../cap_kontrafaktisch.py` (Kommentar 65: Winter 2025/26 mit und ohne CAP-Term, Nachbau des Eiskörpers aus den gespeicherten Läufen, startet build_3_34.py danach selbst) |
 | 21 | 3.3 | `3_3_und_3_4_.../build_map_only.py` | Fassung mit Nordpfeil nur im Dokument; `output/opus48/figs_new/fig_3_3_map_ice_days.png` ist die Fassung davor | `uid_season_metrics.csv` aus `build_3_34.py`, OSM-Kacheln |
-| 24 | 3.5 | `3_5_.../build_fig_cap_calibration_v2.py` | `output/opus48/fig_cap_calibration.png` | `cap_k_calibration_v2.csv` aus `3_5_.../recalibrate_cap.py` (liest `data/CAP/cap_k_calibration_pairs.csv` aus dem Repo) |
-| 25 | 3.6 | `3_6_Validierung/build_val4.py` | `output/opus48/figs_new/fig_3_5_validation_overview.png` | Review-Export und Modellläufe im Repo |
-| 26, 27 | 3.6 | `3_6_Validierung/build_series_multi.py` | `output/opus48/figs_new/fig_photo_series_uid93.png`, `fig_photo_series_uid224.png` | Fotos im Repo |
-| 28 | 3.6 | `3_6_Validierung/build_appendix_102.py` | `output/opus48/figs_new/fig_A1_taschach.png` | Fotos im Repo |
-| 29 | 3.6 | `3_6_Validierung/build_sunfig.py` (seit 28.09.2026: Datum des Strahlungstags in (b) und (c) aus `SUNNY`/`CLOUD` statt fest „2026-03-05“ – die Werte stammten schon vorher vom 2026-02-27; im Dokument jetzt Abb. 28) | `3_6_Validierung/abbildungen/fig_3_5_sun_effect.png` (bis 28.09.2026: `output/opus48/figs_new/fig_3_5_sun_effect.png`) | `_zwischendaten/uid_daily_drivers.csv`, Foto im Repo |
-| 30, 31 | 3.7 | `3_7_und_3_8_.../build_fig_3_7_stationen.py` | `3_7_und_3_8_.../abbildungen/fig_3_7_homogeneity.png`, `fig_3_7_decadal_stations.png` | Tabellen in `FF2_Stationen/ergebnis_modell/tabellen` aus `FF2_Stationen/02_ff2_modelllauf.R` |
-| 32 | 3.7 | `3_7_und_3_8_.../build_longrec_fig.py` | `output/results_3_3_to_3_6/fig_3_6_longrec.png` | `longrec_winters.csv` aus `get_longrec_winters.R` |
-| 33 | 3.8 | `3_7_und_3_8_.../build_fig2628.py` (nur noch der Szenario-Teil wird verwendet; `fig_3_6_decadal_proxy.png` ist seit 24.09.2026 nicht mehr in der Arbeit) | `output/results_3_3_to_3_6/fig_3_7_scenarios.png` | Proxy-Gitter aus `run_grid.py` (INCA-Cache aus `build_inca_winter_reference.R`), `traj_general.json` und `traj_sites.json` in `output/results_3_3_to_3_6` |
+| 24 | 3.5 | `Archiv_Cold-Air-Pooling-Korrektur/build_fig_cap_calibration_v2.py` | `output/opus48/fig_cap_calibration.png` | `cap_k_calibration_v2.csv` aus `Archiv_Cold-Air-Pooling-Korrektur/recalibrate_cap.py` (liest `data/CAP/cap_k_calibration_pairs.csv` aus dem Repo) |
+| 25 | 3.6 | `3_5_Validierung/build_val4.py` | `output/opus48/figs_new/fig_3_5_validation_overview.png` | Review-Export und Modellläufe im Repo |
+| 26, 27 | 3.6 | `3_5_Validierung/build_series_multi.py` | `output/opus48/figs_new/fig_photo_series_uid93.png`, `fig_photo_series_uid224.png` | Fotos im Repo |
+| 28 | 3.6 | `3_5_Validierung/build_appendix_102.py` | `output/opus48/figs_new/fig_A1_taschach.png` | Fotos im Repo |
+| 29 | 3.6 | `3_5_Validierung/build_sunfig.py` (seit 28.09.2026: Datum des Strahlungstags in (b) und (c) aus `SUNNY`/`CLOUD` statt fest „2026-03-05“ – die Werte stammten schon vorher vom 2026-02-27; im Dokument jetzt Abb. 28) | `3_5_Validierung/abbildungen/fig_3_5_sun_effect.png` (bis 28.09.2026: `output/opus48/figs_new/fig_3_5_sun_effect.png`) | `_zwischendaten/uid_daily_drivers.csv`, Foto im Repo |
+| 30, 31 | 3.7 | `3_6_und_3_7_.../build_fig_3_7_stationen.py` | `3_6_und_3_7_.../abbildungen/fig_3_7_homogeneity.png`, `fig_3_7_decadal_stations.png` | Tabellen in `FF2_Stationen/ergebnis_modell/tabellen` aus `FF2_Stationen/02_ff2_modelllauf.R` |
+| 32 | 3.7 | `3_6_und_3_7_.../build_longrec_fig.py` | `output/results_3_3_to_3_6/fig_3_6_longrec.png` | `longrec_winters.csv` aus `get_longrec_winters.R` |
+| 33 | 3.8 | `3_6_und_3_7_.../build_fig2628.py` (nur noch der Szenario-Teil wird verwendet; `fig_3_6_decadal_proxy.png` ist seit 24.09.2026 nicht mehr in der Arbeit) | `output/results_3_3_to_3_6/fig_3_7_scenarios.png` | Proxy-Gitter aus `run_grid.py` (INCA-Cache aus `build_inca_winter_reference.R`), `traj_general.json` und `traj_sites.json` in `output/results_3_3_to_3_6` |
 
 ## Stand 29.09.2026: ohne Titel in den Abbildungen
 
@@ -69,8 +71,8 @@ Stand 25.09.2026: `_zwischendaten/uid_daily_thick_new.pkl` ist aus `output/opus4
 
 ## Bewusst nicht verschoben
 
-- GitHub-Repo `Ice fall modeling/GutHub/ice-waterfalls`: `04_build_study_area_map.py` (Abb. 7; `_locator_right` ist eine nicht verwendete Variante), `06_calibrate_cap_k.R` (Stationspaare für Abb. 26), `diagram_uid.R` (Website-Diagramme). Die Arbeit verweist auf das Repo, daher bleibt es unverändert.
-- `FF2_Stationen/`: stationsbasierte Neuberechnung für Kap. 3.7 (Modellläufe, Stationsprüfung, Tabellen); die Abbildungen 30 und 31 daraus erzeugt `3_7_und_3_8_.../build_fig_3_7_stationen.py`.
+- GitHub-Repo `Ice fall modeling/GitHub/ice-waterfalls`: `04_build_study_area_map.py` (Abb. 7; `_locator_right` ist eine nicht verwendete Variante), `06_calibrate_cap_k.R` (Stationspaare für Abb. 26), `diagram_uid.R` (Website-Diagramme). Die Arbeit verweist auf das Repo, daher bleibt es unverändert.
+- `FF2_Stationen/`: stationsbasierte Neuberechnung für Kap. 3.7 (Modellläufe, Stationsprüfung, Tabellen); die Abbildungen 30 und 31 daraus erzeugt `3_6_und_3_7_.../build_fig_3_7_stationen.py`.
 - `Verteidigung/quellcode/`: Skripte für die Folien.
 - Skripte, die `Masterarbeit.docx` bearbeitet haben (`fix_*`, `k*_*`, `swap_*`, `update_docx*` usw. in `output/opus48` und `output/results_3_3_to_3_6`), sowie Kennzahl-Skripte ohne Abbildung (`daily_stats_new.py`, `detail_values_new.py`, `compare_old_new.py`, `cap_impact.py`).
 

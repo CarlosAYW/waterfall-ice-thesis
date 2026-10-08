@@ -18,7 +18,7 @@
 # --- Diagramm_Skripte: figure scripts + frozen intermediate data ------------
 /Diagramm_Skripte/_Backup_alte_Versionen/
 /Diagramm_Skripte/_zwischendaten/_bloecke_*/
-/Diagramm_Skripte/3_6_Validierung/eingabe/
+/Diagramm_Skripte/3_5_Validierung/eingabe/
 __pycache__/
 *.py[cod]
 .Rhistory
@@ -53,9 +53,9 @@ __pycache__/
 
 # --- Model repository: git submodule at its original path -------------------
 /Ice fall modeling/*
-!/Ice fall modeling/GutHub/
-/Ice fall modeling/GutHub/*
-!/Ice fall modeling/GutHub/ice-waterfalls
+!/Ice fall modeling/GitHub/
+/Ice fall modeling/GitHub/*
+!/Ice fall modeling/GitHub/ice-waterfalls
 
 # --- Large files that no shipped figure script reads and that the pipeline ----
 # --- regenerates (README 4.3); SVG/PDF duplicates of Fig. 7 (PNG is kept) -----

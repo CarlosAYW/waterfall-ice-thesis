@@ -6,7 +6,7 @@
 # und berechnet pro Winter (1. Okt - 30. Apr) die Kennzahlen des
 # saettigenden Temperatur-Proxys (gleiche Koeffizienten wie das Modell).
 #
-# Ausfuehren:  source(".../Diagramm_Skripte/3_7_und_3_8_.../get_longrec_winters.R")
+# Ausfuehren:  source(".../Diagramm_Skripte/3_6_und_3_7_.../get_longrec_winters.R")
 #              oder in RStudio "Source" (Internet noetig, ~1 Minute)
 # Ergebnis:    Diagramm_Skripte/_zwischendaten/longrec_winters.csv
 
@@ -30,7 +30,7 @@ local({
   if (!is.null(pfad) && nzchar(pfad)) {
     setwd(dirname(dirname(dirname(normalizePath(pfad, winslash = "/")))))
   }
-  if (!dir.exists(file.path("Ice fall modeling", "GutHub", "ice-waterfalls"))) {
+  if (!dir.exists(file.path("Ice fall modeling", "GitHub", "ice-waterfalls"))) {
     stop("Ordner 'Masterarbeit' nicht gefunden. Bitte setwd() auf den Ordner 'Masterarbeit' setzen.")
   }
 })

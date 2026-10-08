@@ -2,18 +2,18 @@
 
 ## Created map files
 
-- `/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/Diagramm_Skripte/2_1_Untersuchungsgebiet/abbildungen/study_area_icefall_inventory_map.png`: high-resolution PNG, 300 dpi, Word-ready raster export.
-- `/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/Diagramm_Skripte/2_1_Untersuchungsgebiet/abbildungen/study_area_icefall_inventory_map.pdf`: PDF export with vector text and raster hillshade.
-- `/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/Diagramm_Skripte/2_1_Untersuchungsgebiet/abbildungen/study_area_icefall_inventory_map.svg`: SVG export with vector text and raster hillshade.
+- `Diagramm_Skripte/2_1_Untersuchungsgebiet/abbildungen/study_area_icefall_inventory_map.png`: high-resolution PNG, 300 dpi, Word-ready raster export.
+- `Diagramm_Skripte/2_1_Untersuchungsgebiet/abbildungen/study_area_icefall_inventory_map.pdf`: PDF export with vector text and raster hillshade.
+- `Diagramm_Skripte/2_1_Untersuchungsgebiet/abbildungen/study_area_icefall_inventory_map.svg`: SVG export with vector text and raster hillshade.
 
 ## Data used
 
-- `/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/Ice fall modeling/GutHub/ice-waterfalls/data/AWS/icefalls_nearest_station.csv`: final mapped icefall working inventory; all plotted points come from this file.
-- `/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/Ice fall modeling/GutHub/ice-waterfalls/data/Koordinaten_Wasserfaelle/eisklettern_links_entries_diff.csv`: cross-check only for UID and coordinate consistency.
-- `/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/Ice fall modeling/GutHub/ice-waterfalls/data/DEM/eudem_dem_3035_europe.tif`: available local DEM; not used in the current OSM Standard tile rendering.
-- `/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/Ice fall modeling/GutHub/ice-waterfalls/data/ModelRuns`: QA only, used to identify existing, missing, or stale model outputs.
-- Natural Earth 10 m admin-0 and admin-1 boundaries, cached under `/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/output/study_area_map/_cache`.
-- OpenStreetMap Standard tile layer, (c) OpenStreetMap contributors (ODbL), cached under `/sessions/rcw-01tt2seazuzmsfsj14vglkx4/mnt/Masterarbeit/output/study_area_map/_cache` and plotted in EPSG:3857.
+- `Ice fall modeling/GitHub/ice-waterfalls/data/AWS/icefalls_nearest_station.csv`: final mapped icefall working inventory; all plotted points come from this file.
+- `Ice fall modeling/GitHub/ice-waterfalls/data/Koordinaten_Wasserfaelle/eisklettern_links_entries_diff.csv`: cross-check only for UID and coordinate consistency.
+- `Ice fall modeling/GitHub/ice-waterfalls/data/DEM/eudem_dem_3035_europe.tif`: available local DEM; not used in the current OSM Standard tile rendering.
+- `Ice fall modeling/GitHub/ice-waterfalls/data/ModelRuns`: QA only, used to identify existing, missing, or stale model outputs.
+- Natural Earth 10 m admin-0 and admin-1 boundaries, cached under `output/study_area_map/_cache`.
+- OpenStreetMap Standard tile layer, (c) OpenStreetMap contributors (ODbL), cached under `output/study_area_map/_cache` and plotted in EPSG:3857.
 
 ## CRS and projection
 

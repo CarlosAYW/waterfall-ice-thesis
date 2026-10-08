@@ -20,7 +20,7 @@ local({
   if (!is.null(pfad) && nzchar(pfad)) {
     setwd(dirname(dirname(dirname(normalizePath(pfad, winslash = "/")))))
   }
-  if (!dir.exists(file.path("Ice fall modeling", "GutHub", "ice-waterfalls"))) {
+  if (!dir.exists(file.path("Ice fall modeling", "GitHub", "ice-waterfalls"))) {
     stop("Ordner 'Masterarbeit' nicht gefunden. Bitte setwd() auf den Ordner 'Masterarbeit' setzen.")
   }
 })
@@ -39,7 +39,7 @@ suppressPackageStartupMessages({
   library(zoo)
 })
 
-root <- normalizePath(file.path("Ice fall modeling", "GutHub", "ice-waterfalls"), winslash = "/", mustWork = TRUE)
+root <- normalizePath(file.path("Ice fall modeling", "GitHub", "ice-waterfalls"), winslash = "/", mustWork = TRUE)
 out_dir <- normalizePath(file.path("output", "results_3_1_meteorological_conditions"), winslash = "/", mustWork = TRUE)
 cache_dir <- file.path(out_dir, "station_tlrf_cache")
 dir.create(cache_dir, showWarnings = FALSE, recursive = TRUE)

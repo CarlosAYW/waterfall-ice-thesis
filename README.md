@@ -12,7 +12,7 @@ This repository holds the code, the intermediate data and the figure scripts beh
 - **1** (Fig. 7) additionally downloads basemaps,
 - **9** need the per-route model runs (≈ 8 GB, regenerable) and/or private validation photographs.
 
-> **Relation to `ice-waterfalls`.** The thesis cites [github.com/CarlosAYW/ice-waterfalls](https://github.com/CarlosAYW/ice-waterfalls) (model and operational map). That repository is included here as a **git submodule at `Ice fall modeling/GutHub/ice-waterfalls`, pinned to its tag `thesis-submission`**, i.e. the exact model version used in the thesis. Its `main` branch and the [interactive map](https://carlosayw.github.io/ice-waterfalls/) keep running daily and may differ from the thesis version.
+> **Relation to `ice-waterfalls`.** The thesis cites [github.com/CarlosAYW/ice-waterfalls](https://github.com/CarlosAYW/ice-waterfalls) (model and operational map). That repository is included here as a **git submodule at `Ice fall modeling/GitHub/ice-waterfalls`, pinned to its tag `thesis-submission`**, i.e. the exact model version used in the thesis. Its `main` branch and the [interactive map](https://carlosayw.github.io/ice-waterfalls/) keep running daily and may differ from the thesis version.
 
 ## Reviewer quick guide
 
@@ -33,7 +33,7 @@ This repository holds the code, the intermediate data and the figure scripts beh
 waterfall-ice-thesis/                          ← repository root (the author's local folder "Masterarbeit")
 ├── README.md · requirements.txt · CITATION.cff
 │
-├── Ice fall modeling/GutHub/ice-waterfalls/   MODEL — git submodule, tag thesis-submission
+├── Ice fall modeling/GitHub/ice-waterfalls/   MODEL — git submodule, tag thesis-submission
 │   ├── scripts/        diagram_uid.R (ice model), add_new_icefalls.R, 00_build_inversion_cache.R, map build
 │   ├── analysis/       cold_air_pooling/ (CAP index), icefall_structure/, study_area_map/,
 │   │                   Icefall_validation/Review_Tool/ (review tool + decision export, no photographs)
@@ -49,10 +49,10 @@ waterfall-ice-thesis/                          ← repository root (the author's
 │   ├── 3_1_Meteorologische_Bedingungen/       § 3.1
 │   ├── 3_2_Modellierte_Eisentwicklung/        § 3.2
 │   ├── 3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/   § 3.3, 3.4
-│   ├── 3_5_Cold-Air-Pooling-Korrektur/        – (no longer in the thesis; kept for the record)
-│   ├── 3_6_Validierung/                       § 3.5      ┐ folder numbers follow an
-│   ├── 3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/  § 3.6, 3.7 ┘ earlier chapter numbering
+│   ├── 3_5_Validierung/                       § 3.5
+│   ├── 3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/  § 3.6, 3.7
 │   │   └── abbildungen/                       (in every section folder) figure files as used in the thesis
+│   ├── Archiv_Cold-Air-Pooling-Korrektur/     – CAP recalibration; no longer in the thesis, kept for the record
 │   ├── _zwischendaten/                        frozen intermediate data read by the figure scripts
 │   └── README.md                              German working log (figure numbers there are outdated)
 │
@@ -81,17 +81,17 @@ Script paths are relative to `Diagramm_Skripte/`; outputs lie in `abbildungen/` 
 | 10, 11, 14 | 3.1 | [`3_1_…/build_31figs.py`](Diagramm_Skripte/3_1_Meteorologische_Bedingungen/build_31figs.py) | `fig_3_1_station_temperature_distribution.png`, `…_freezing_share.png`, `…_degree_hours_by_elevation.png` | `_zwischendaten/uid_daily_drivers.csv`, `uid_static.csv` ← preprocessing | **yes** |
 | 12, 13 | 3.1 | [`3_1_…/build_fig12_13_303.R`](Diagramm_Skripte/3_1_Meteorologische_Bedingungen/build_fig12_13_303.R) | `fig_3_1_station_humidity_wind_radiation.png`, `…_topographic_sun_hours.png` | `output/results_3_1_meteorological_conditions/station_temperature_daily_route_summary.csv` ← `build_results_3_1_station_temperature.R`; `_zwischendaten/uid_daily_drivers.csv` | *yes, untested* |
 | 15 | 3.1 | [`3_1_…/build_31_station_reference.py`](Diagramm_Skripte/3_1_Meteorologische_Bedingungen/build_31_station_reference.py) | `fig_3_1_station_winter_reference.png` | `FF2_Stationen/ergebnis_modell/tageswerte_voll.rds` ← `02_ff2_modelllauf.R`; `output/results_3_1_meteorological_conditions/inca_winter_reference/*.csv` ← `build_inca_winter_reference.R` | **yes** |
-| 16, 17 | 3.2 | [`3_2_…/build_results_3_2_modelled_ice.py`](Diagramm_Skripte/3_2_Modellierte_Eisentwicklung/build_results_3_2_modelled_ice.py) | `fig_3_2_modelled_ice_thickness.png`, `fig_3_2_growth_melt_cold_phases.png` | model runs (303 routes, ending 2026-04-30) | **no** – model runs |
+| 16, 17 | 3.2 | [`3_2_…/build_results_3_2_modelled_ice.py`](Diagramm_Skripte/3_2_Modellierte_Eisentwicklung/build_results_3_2_modelled_ice.py) | `fig_3_2_modelled_ice_thickness.png`, `fig_3_2_growth_melt_cold_phases.png` | model runs (303 routes, read up to 2026-04-30) | **no** – model runs |
 | 18 | 3.2 | [`3_2_…/build_allfalls.py`](Diagramm_Skripte/3_2_Modellierte_Eisentwicklung/build_allfalls.py) | `fig_3_2_all_routes.png` | `_zwischendaten/` ← preprocessing; `uid_season_metrics.csv` ← `build_3_34.py` | **yes** |
 | 19, 20, 22, 23 | 3.3, 3.4 | [`3_3_und_3_4_…/build_3_34.py`](Diagramm_Skripte/3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/build_3_34.py) | `fig_3_3_elevation.png`, `fig_3_3_aspect_sun_cap.png`, `fig_3_4_thermal_window.png`, `fig_3_4_seasonal_controls.png` | `_zwischendaten/`; `cap_kontra_routen.csv` ← `cap_kontrafaktisch.py`; `faktoren_kontra_routen.csv` ← `faktoren_kontrafaktisch.py` | **yes** |
 | 21 | 3.3 | [`3_3_und_3_4_…/build_map_only.py`](Diagramm_Skripte/3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/build_map_only.py) | `fig_3_3_map_ice_days.png` | `uid_season_metrics.csv` ← `build_3_34.py`; OSM tiles (included) | **yes** |
-| 24 | 3.5 | [`3_6_Validierung/build_val5.py`](Diagramm_Skripte/3_6_Validierung/build_val5.py) | `fig_3_5_validation_overview_v5.png` | model runs; review decisions | **no** – model runs, photos |
-| 25, 26 | 3.5 | [`3_6_Validierung/build_series_multi.py`](Diagramm_Skripte/3_6_Validierung/build_series_multi.py) | `fig_photo_series_uid93.png`, `…_uid224.png` | model runs; photographs | **no** – model runs, photos |
-| 27 | 3.5 | [`3_6_Validierung/build_appendix_102_v2.py`](Diagramm_Skripte/3_6_Validierung/build_appendix_102_v2.py) | `fig_A1_taschach_v2.png` | model run of route 102; photographs | **no** – model runs, photos |
-| 28 | 3.5 | [`3_6_Validierung/build_sunfig.py`](Diagramm_Skripte/3_6_Validierung/build_sunfig.py) | `fig_3_5_sun_effect.png` | `_zwischendaten/uid_daily_drivers.csv`; photograph | **no** – photograph |
-| 29, 30 | 3.6 | [`3_7_und_3_8_…/build_fig_3_7_stationen.py`](Diagramm_Skripte/3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/build_fig_3_7_stationen.py) | `fig_3_7_homogeneity.png`, `fig_3_7_decadal_stations.png` | `FF2_Stationen/ergebnis_modell/tabellen/` ← `02_ff2_modelllauf.R` | **yes** |
-| 31 | 3.6 | [`3_7_und_3_8_…/build_longrec_fig.py`](Diagramm_Skripte/3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/build_longrec_fig.py) | `fig_3_6_longrec.png` | `_zwischendaten/longrec_winters.csv` ← `get_longrec_winters.R` | **yes** |
-| 32 | 3.7 | [`3_7_und_3_8_…/build_fig2628.py`](Diagramm_Skripte/3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/build_fig2628.py) | `fig_3_7_scenarios.png` | `_zwischendaten/grid_res_all.pkl` ← `run_grid.py`; `traj_*.json` ← `szenario_trajektorien.py` (see README 8) | **yes** |
+| 24 | 3.5 | [`3_5_Validierung/build_val5.py`](Diagramm_Skripte/3_5_Validierung/build_val5.py) | `fig_3_5_validation_overview_v5.png` | model runs; review decisions | **no** – model runs, photos |
+| 25, 26 | 3.5 | [`3_5_Validierung/build_series_multi.py`](Diagramm_Skripte/3_5_Validierung/build_series_multi.py) | `fig_photo_series_uid93.png`, `…_uid224.png` | model runs; photographs | **no** – model runs, photos |
+| 27 | 3.5 | [`3_5_Validierung/build_appendix_102_v2.py`](Diagramm_Skripte/3_5_Validierung/build_appendix_102_v2.py) | `fig_A1_taschach_v2.png` | model run of route 102; photographs | **no** – model runs, photos |
+| 28 | 3.5 | [`3_5_Validierung/build_sunfig.py`](Diagramm_Skripte/3_5_Validierung/build_sunfig.py) | `fig_3_5_sun_effect.png` | `_zwischendaten/uid_daily_drivers.csv`; photograph | **no** – photograph |
+| 29, 30 | 3.6 | [`3_6_und_3_7_…/build_fig_3_7_stationen.py`](Diagramm_Skripte/3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/build_fig_3_7_stationen.py) | `fig_3_7_homogeneity.png`, `fig_3_7_decadal_stations.png` | `FF2_Stationen/ergebnis_modell/tabellen/` ← `02_ff2_modelllauf.R` | **yes** |
+| 31 | 3.6 | [`3_6_und_3_7_…/build_longrec_fig.py`](Diagramm_Skripte/3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/build_longrec_fig.py) | `fig_3_6_longrec.png` | `_zwischendaten/longrec_winters.csv` ← `get_longrec_winters.R` | **yes** |
+| 32 | 3.7 | [`3_6_und_3_7_…/build_fig2628.py`](Diagramm_Skripte/3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/build_fig2628.py) | `fig_3_7_scenarios.png` | `_zwischendaten/grid_res_all.pkl` ← `run_grid.py`; `traj_*.json` ← `szenario_trajektorien.py` (see README 8) | **yes** |
 
 ### 2.2 Upstream scripts
 
@@ -103,8 +103,8 @@ These scripts produced the inputs that are shipped with the repository. Re-runni
 | [`3_3_und_3_4_…/cap_kontrafaktisch.py`](Diagramm_Skripte/3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/cap_kontrafaktisch.py), [`faktoren_kontrafaktisch.py`](Diagramm_Skripte/3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/faktoren_kontrafaktisch.py) | counterfactual runs without CAP / single factors (Fig. 20c, 23b) | model runs |
 | [`3_1_…/build_results_3_1_station_temperature.R`](Diagramm_Skripte/3_1_Meteorologische_Bedingungen/build_results_3_1_station_temperature.R) | station-based route summary (Fig. 12, 13) | GeoSphere and LWD Tirol APIs; INCA netCDF of the model repo |
 | [`3_1_…/build_inca_winter_reference.R`](Diagramm_Skripte/3_1_Meteorologische_Bedingungen/build_inca_winter_reference.R) | INCA reference winters (Fig. 15) and INCA cache for `run_grid.py` | GeoSphere INCA API |
-| [`3_7_und_3_8_…/run_grid.py`](Diagramm_Skripte/3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/run_grid.py) → [`szenario_trajektorien.py`](Diagramm_Skripte/3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/szenario_trajektorien.py) | warming-response grid and scenario trajectories (Fig. 32) | INCA cache |
-| [`3_7_und_3_8_…/get_longrec_winters.R`](Diagramm_Skripte/3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/get_longrec_winters.R) | long station records (Fig. 31) | GeoSphere API |
+| [`3_6_und_3_7_…/run_grid.py`](Diagramm_Skripte/3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/run_grid.py) → [`szenario_trajektorien.py`](Diagramm_Skripte/3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/szenario_trajektorien.py) | warming-response grid and scenario trajectories (Fig. 32) | INCA cache |
+| [`3_6_und_3_7_…/get_longrec_winters.R`](Diagramm_Skripte/3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/get_longrec_winters.R) | long station records (Fig. 31) | GeoSphere API |
 | [`FF2_Stationen/01_stationscheck.R`](FF2_Stationen/01_stationscheck.R) → [`02_ff2_modelllauf.R`](FF2_Stationen/02_ff2_modelllauf.R) | decadal runs, homogeneity and trend tables (Fig. 15, 29, 30) | station APIs; 01: 10–20 min, 02: many hours |
 
 ### 2.3 Key numbers → files
@@ -167,9 +167,9 @@ for s in 3_1_Meteorologische_Bedingungen/build_31figs.py \
          3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/build_3_34.py \
          3_2_Modellierte_Eisentwicklung/build_allfalls.py \
          3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/build_map_only.py \
-         3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/build_fig_3_7_stationen.py \
-         3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/build_longrec_fig.py \
-         3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/build_fig2628.py
+         3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/build_fig_3_7_stationen.py \
+         3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/build_longrec_fig.py \
+         3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/build_fig2628.py
 do python "Diagramm_Skripte/$s" || echo "FAILED: $s"; done
 ```
 
@@ -181,9 +181,9 @@ $scripts = "3_1_Meteorologische_Bedingungen/build_31figs.py",
            "3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/build_3_34.py",
            "3_2_Modellierte_Eisentwicklung/build_allfalls.py",
            "3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/build_map_only.py",
-           "3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/build_fig_3_7_stationen.py",
-           "3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/build_longrec_fig.py",
-           "3_7_und_3_8_Dekadische_Entwicklung_und_Szenarien/build_fig2628.py"
+           "3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/build_fig_3_7_stationen.py",
+           "3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/build_longrec_fig.py",
+           "3_6_und_3_7_Dekadische_Entwicklung_und_Szenarien/build_fig2628.py"
 foreach ($s in $scripts) { python "Diagramm_Skripte/$s" }
 ```
 
@@ -193,14 +193,14 @@ Fig. 12 and 13 (R; inputs included, not re-run for this README): `Rscript Diagra
 
 ### 4.3 Regenerate the model runs (several hours, not re-run for this README)
 
-The model writes one file per route to `Ice fall modeling/GutHub/ice-waterfalls/data/ModelRuns/model_uid<ID>.csv`, taking the route ID as argument and the end date from `MODEL_END_DATE`. The thesis runs cover 1 Oct 2025 – 30 Apr 2026 for the 303 IDs in `Diagramm_Skripte/_zwischendaten/uid_static.csv`. The batch script originally used for them is not preserved; the loop below calls the model in the same way but was not re-run for this README. The model downloads INCA point series and station data from the GeoSphere Austria and Lawinenwarndienst Tirol APIs (cached in `data/inca_nordtirol/point_timeseries/` and similar folders, which are not version-controlled), so results match the thesis only as long as the provider data are unchanged.
+The model writes one file per route to `Ice fall modeling/GitHub/ice-waterfalls/data/ModelRuns/model_uid<ID>.csv`, taking the route ID as argument and the end date from `MODEL_END_DATE`. The thesis runs start on 1 Oct 2025 and were computed with `MODEL_END_DATE=2026-07-27` for the 303 IDs in `Diagramm_Skripte/_zwischendaten/uid_static.csv`; the thesis evaluates them up to 30 Apr 2026. The batch script originally used for them is not preserved; the loop below calls the model in the same way but was not re-run for this README. The model downloads INCA point series and station data from the GeoSphere Austria and Lawinenwarndienst Tirol APIs (cached in `data/inca_nordtirol/point_timeseries/` and similar folders, which are not version-controlled), so results match the thesis only as long as the provider data are unchanged.
 
 <details>
 <summary>Commands</summary>
 
 ```bash
-cd "Ice fall modeling/GutHub/ice-waterfalls"
-export MODEL_END_DATE=2026-04-30
+cd "Ice fall modeling/GitHub/ice-waterfalls"
+export MODEL_END_DATE=2026-07-27
 Rscript scripts/diagram_uid.R 93                                   # one route as a test
 for id in $(python -c "import pandas as p; print(*p.read_csv('../../../Diagramm_Skripte/_zwischendaten/uid_static.csv').uid)"); do
   Rscript scripts/diagram_uid.R "$id"
@@ -217,7 +217,7 @@ python Diagramm_Skripte/3_3_und_3_4_Raeumliche_Unterschiede_und_Steuerung/cap_ko
 PowerShell: replace the first loop by
 
 ```powershell
-$env:MODEL_END_DATE = "2026-04-30"
+$env:MODEL_END_DATE = "2026-07-27"
 Import-Csv ../../../Diagramm_Skripte/_zwischendaten/uid_static.csv | ForEach-Object { Rscript scripts/diagram_uid.R $_.uid }
 ```
 </details>
@@ -232,16 +232,16 @@ Import-Csv ../../../Diagramm_Skripte/_zwischendaten/uid_static.csv | ForEach-Obj
 
 ## 5 Path rules
 
-**Do not rename or move any folder below the repository root**, including `Ice fall modeling/`, `GutHub` (a typo kept on purpose) and the German folder names. All scripts locate their files through these exact names and relative positions. The name of the root folder itself does not matter (`waterfall-ice-thesis` after cloning, `Masterarbeit` on the author's machine).
+**Do not rename or move any folder below the repository root**, including `Ice fall modeling/GitHub/` and the German folder names. All scripts locate their files through these exact names and relative positions. The name of the root folder itself does not matter (`waterfall-ice-thesis` after cloning, `Masterarbeit` on the author's machine).
 
 | Scripts | Start from | Why |
 |---|---|---|
-| `Diagramm_Skripte/**/*.py` | any directory | `pfade.py` derives all paths from its own location: root = parent of `Diagramm_Skripte/`, model repository = `<root>/Ice fall modeling/GutHub/ice-waterfalls`, intermediate data = `Diagramm_Skripte/_zwischendaten/` |
+| `Diagramm_Skripte/**/*.py` | any directory | `pfade.py` derives all paths from its own location: root = parent of `Diagramm_Skripte/`, model repository = `<root>/Ice fall modeling/GitHub/ice-waterfalls`, intermediate data = `Diagramm_Skripte/_zwischendaten/` |
 | `Diagramm_Skripte/**/*.R` | any directory via `Rscript <path>` or RStudio *Source*; for line-by-line execution first `setwd()` to the repository root | the script header finds its own path and calls `setwd()` to the repository root (its error message calls this folder "Masterarbeit", the author's local name for it) |
 | `FF2_Stationen/*.R` | any directory | paths are built from the script's own folder |
-| model repository: `scripts/*.R`, `analysis/**/*.R` | `Ice fall modeling/GutHub/ice-waterfalls/` | paths such as `data/AWS/…` are relative to that folder (as in the GitHub Actions workflow) |
+| model repository: `scripts/*.R`, `analysis/**/*.R` | `Ice fall modeling/GitHub/ice-waterfalls/` | paths such as `data/AWS/…` are relative to that folder (as in the GitHub Actions workflow) |
 
-Paths contain spaces: always quote them, e.g. `cd "Ice fall modeling/GutHub/ice-waterfalls"`.
+Paths contain spaces: always quote them, e.g. `cd "Ice fall modeling/GitHub/ice-waterfalls"`.
 
 ## 6 Data lineage and availability
 
@@ -290,8 +290,8 @@ flowchart LR
 
 ## 8 Known limitations
 
-- Folder numbers in `Diagramm_Skripte/` follow an earlier chapter numbering; the mapping is in README 1. File names can carry old numbers too (e.g. `build_fig2628.py` makes Fig. 32, `fig_3_7_homogeneity.png` belongs to § 3.6); the figure index is authoritative.
-- `3_7_und_3_8_…/szenario_trajektorien.py` reconstructs a lost original script from the method description; against the trajectory files used in the thesis it deviates by at most 0.1 ice days.
+- Some file names in `Diagramm_Skripte/` still carry older figure or section numbers (e.g. `build_fig2628.py` makes Fig. 32, `fig_3_7_homogeneity.png` belongs to § 3.6); the figure index is authoritative. The section folders themselves follow the thesis numbering.
+- `3_6_und_3_7_…/szenario_trajektorien.py` reconstructs a lost original script from the method description; against the trajectory files used in the thesis it deviates by at most 0.1 ice days.
 - The batch script for the thesis model runs is not preserved; README 4.3 gives a loop that calls the model in the same way (untested).
 - Regenerated PNGs are visually identical to the thesis figures but not byte-identical.
 - Some script names carry version suffixes (`_v2`, `_v5`); the figure index names the version used.

@@ -9,7 +9,7 @@ from pathlib import Path
 
 SKRIPTE = Path(__file__).resolve().parent          # .../Masterarbeit/Diagramm_Skripte
 MA = SKRIPTE.parent                                # .../Masterarbeit
-REPO = MA / "Ice fall modeling" / "GutHub" / "ice-waterfalls"
+REPO = MA / "Ice fall modeling" / "GitHub" / "ice-waterfalls"
 OUTPUT = MA / "output"
 ZWISCHEN = SKRIPTE / "_zwischendaten"
 ZWISCHEN.mkdir(exist_ok=True)

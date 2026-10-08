@@ -19,7 +19,7 @@ ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildunge
 
 WORKSPACE = MA
 OUT_DIR = ZWISCHEN          # Tabellen und Textbaustein; Abbildungen gehen nach ABB
-MODEL_DIR = WORKSPACE / "Ice fall modeling" / "GutHub" / "ice-waterfalls" / "data" / "ModelRuns"
+MODEL_DIR = WORKSPACE / "Ice fall modeling" / "GitHub" / "ice-waterfalls" / "data" / "ModelRuns"
 TARGET_END_DATE = pd.Timestamp("2026-04-30")
 PHASE_THRESHOLD_M = 0.005
 
@@ -297,7 +297,7 @@ These figures are aggregated from `diagram_uid.R` outputs in `data/ModelRuns`, i
 
 
 def main() -> None:
-    want = set(pd.read_csv(WORKSPACE / "Ice fall modeling" / "GutHub" / "ice-waterfalls"
+    want = set(pd.read_csv(WORKSPACE / "Ice fall modeling" / "GitHub" / "ice-waterfalls"
                            / "data" / "AWS" / "icefalls_nearest_station.csv")["uid"])
     files = sorted(MODEL_DIR.glob("model_uid*.csv"), key=uid_from_path)
     files = [f for f in files if uid_from_path(f) in want]

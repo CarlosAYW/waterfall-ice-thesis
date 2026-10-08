@@ -20,7 +20,7 @@ local({
   if (!is.null(pfad) && nzchar(pfad)) {
     setwd(dirname(dirname(dirname(normalizePath(pfad, winslash = "/")))))
   }
-  if (!dir.exists(file.path("Ice fall modeling", "GutHub", "ice-waterfalls"))) {
+  if (!dir.exists(file.path("Ice fall modeling", "GitHub", "ice-waterfalls"))) {
     stop("Ordner 'Masterarbeit' nicht gefunden. Bitte setwd() auf den Ordner 'Masterarbeit' setzen.")
   }
 })
@@ -43,7 +43,7 @@ out_dir <- file.path("Diagramm_Skripte", "3_1_Meteorologische_Bedingungen", "abb
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 fam <- Sys.getenv("ABB_SCHRIFT", "")
 
-routes <- read_csv(file.path("Ice fall modeling", "GutHub", "ice-waterfalls", "data", "AWS",
+routes <- read_csv(file.path("Ice fall modeling", "GitHub", "ice-waterfalls", "data", "AWS",
                              "icefalls_nearest_station.csv"), show_col_types = FALSE)$uid
 
 theme_thesis <- function(base_size = 10) {
