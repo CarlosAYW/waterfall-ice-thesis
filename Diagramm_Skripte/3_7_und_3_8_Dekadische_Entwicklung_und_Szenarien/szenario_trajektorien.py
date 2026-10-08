@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-"""Szenario-Trajektorien fuer Abb. 34 (Kap. 3.8): traj_general.json und traj_sites.json.
+"""Szenario-Trajektorien fuer Abb. 32 (Kap. 3.7): traj_general.json und traj_sites.json.
 
-Nachgebaut nach der Methodenbeschreibung in Kap. 3.8, weil das urspruengliche
+Nachgebaut nach der Methodenbeschreibung der Arbeit, weil das urspruengliche
 Skript nicht erhalten ist. Gegen die in der Arbeit verwendeten JSON-Dateien
 geprueft: groesste Abweichung 0,1 Eistage (Rundung).
 
@@ -27,7 +26,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import ZWISCHEN  # noqa: E402
+from pfade import ZWISCHEN
 
 SPM1 = {"SSP1-2.6": (1.5, 1.7, 1.8), "SSP2-4.5": (1.5, 2.0, 2.7), "SSP5-8.5": (1.6, 2.4, 4.4)}
 ANKER = [2019, 2030, 2050, 2090]

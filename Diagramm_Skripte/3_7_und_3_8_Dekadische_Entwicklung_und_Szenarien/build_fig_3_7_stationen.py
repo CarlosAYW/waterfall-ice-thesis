@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
-"""Abbildungen fuer Kap. 3.7 aus der stationsbasierten Neuberechnung (FF2).
+"""Abb. 29 und 30 (Kap. 3.6) aus der stationsbasierten Neuberechnung (FF2).
 
 Liest die Tabellen, die FF2_Stationen/02_ff2_modelllauf.R nach
 FF2_Stationen/ergebnis_modell/tabellen schreibt, und erzeugt in
 <Kapitelordner>/abbildungen:
 
   fig_3_7_homogeneity.png       Homogenitaetspruefung der Temperaturstationen
-  fig_3_7_decadal_stations.png  Dekadische Entwicklung, Layout wie die fruehere
-                                Abb. 32 (fig_3_6_decadal_proxy.png aus build_fig2628.py)
+  fig_3_7_decadal_stations.png  Dekadische Entwicklung
 
 Auswertungsmenge wie im R-Skript: Routen an homogenen Stationen mit mindestens
 10 gueltigen Wintern und mindestens 4 je Haelfte (= Routen in route_trends.csv).
@@ -34,7 +32,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, abbildungen, schrift, einheitlich  # noqa: E402
+from pfade import MA, abbildungen, schrift, einheitlich
 
 ABB = abbildungen(__file__)
 TAB = MA / "FF2_Stationen" / "ergebnis_modell" / "tabellen"

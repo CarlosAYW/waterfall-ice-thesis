@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 """Build a publication-style study-area map for the icefall thesis.
 
-Kopie von analysis/study_area_map/04_build_study_area_map.py aus dem Repo (27.09.2026, Kommentar zu Abb. 7):
-- Punkte = aktuelle Zuordnungstabelle mit den 303 Routen der Arbeit (die Fassung vom 13.05. zeigte 325),
-- die gestrichelte "North Tyrol workflow bbox" entfaellt; sie stammte aus einer fruehen Arbeitsphase
-  und hat fuer die Auswertungen keine Bedeutung (alle 303 Routen, auch die 65 oestlich von 12,2 Grad O, gehen ein),
-- Ausgabe in 2_1_Untersuchungsgebiet/abbildungen, OSM- und Natural-Earth-Cache weiter aus output/study_area_map/_cache.
+Copy of analysis/study_area_map/04_build_study_area_map.py from the model repository,
+restricted to the 303 routes of the thesis (station assignment table). Output: 2_1_Untersuchungsgebiet/abbildungen;
+OSM and Natural Earth cache: output/study_area_map/_cache.
 
 The map deliberately uses the station-assigned operational working
 inventory as its point layer. It does not map the broader raw inventory.
@@ -59,7 +57,7 @@ def find_repo_root(script: Path) -> Path:
 SCRIPT = Path(__file__).resolve()
 import sys as _sys
 _sys.path.insert(0, str(SCRIPT.parents[1]))
-from pfade import REPO, MA as _MA, abbildungen as _abbildungen  # noqa: E402
+from pfade import REPO, MA as _MA, abbildungen as _abbildungen
 THESIS_ROOT = _MA
 OUT_DIR = _abbildungen(SCRIPT)
 CACHE_DIR = _MA / "output" / "study_area_map" / "_cache"
@@ -1301,7 +1299,7 @@ def build_map() -> MapOutputs:
     clean_axes(ax_main, main_extent)
 
     draw_graticule_3857(ax_main, main_extent, lon_step=0.5, lat_step=0.2, fontsize=7)
-    sc = draw_points_3857(ax_main, assign, norm, size=18, title="")   # seit 29.09.2026 ohne Titel in der Abbildung
+    sc = draw_points_3857(ax_main, assign, norm, size=18, title="")
 
     add_scale_bar_3857(ax_main, 50)
     add_true_north_arrow_3857(ax_main)
@@ -1344,7 +1342,7 @@ def build_map() -> MapOutputs:
     doc = OUT_DIR / "study_area_icefall_inventory_map_documentation.md"
 
     for out in (png, pdf, svg):
-        # seit 29.09.2026: Weissraum (frueher Platz fuer den Titel) abschneiden
+        # Weissraum abschneiden
         fig.savefig(out, dpi=300, bbox_inches="tight", pad_inches=0.04)
     plt.close(fig)
 

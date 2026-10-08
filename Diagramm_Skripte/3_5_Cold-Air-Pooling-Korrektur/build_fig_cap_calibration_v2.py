@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-"""Abbildung 25, Neufassung.
+"""CAP-Kalibrierung (nicht mehr in der Arbeit).
 
 (a) Schaetzwerte je Teilmenge fuer beide Modellvarianten mit geblockten 95 %-KI
 (b) Schaetzwert gegen mittleres Gate: mit fester Lapse Rate faellt er ab, mit
@@ -16,7 +15,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 OUT = str(ABB)

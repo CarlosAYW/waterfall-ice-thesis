@@ -1,12 +1,11 @@
-# -*- coding: utf-8 -*-
-"""Baut die Zwischendateien (frueher unter /tmp), die die Abbildungsskripte lesen,
+"""Baut die Zwischendateien, die die Abbildungsskripte lesen,
 aus den CAP-aktualisierten Laeufen neu. Liest und schreibt Diagramm_Skripte/_zwischendaten."""
 import os
 import numpy as np, pandas as pd
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, bloecke  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, bloecke
 
 OUT = str(ZWISCHEN)   # Ergebnisse von recompute_chunk.py und thick_chunk.py
 

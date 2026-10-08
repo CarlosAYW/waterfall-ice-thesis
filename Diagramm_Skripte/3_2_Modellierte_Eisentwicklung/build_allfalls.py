@@ -1,4 +1,4 @@
-"""Neue Ergebnisfigur: alle 298 Routen der Saison 2025/26 (Spaghetti, nach Höhenband)."""
+"""Abb. 18: alle Routen der Saison 2025/26 (Spaghetti, nach Höhenband)."""
 import pandas as pd, numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
@@ -8,7 +8,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({

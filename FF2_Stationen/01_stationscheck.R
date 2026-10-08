@@ -6,7 +6,7 @@
 # Maldonkopf IMUT1), ob die Lufttemperatur in den 14 Wintern 2012/13 bis
 # 2025/26 (1. Oktober - 30. April) belastbar vorliegt.
 #
-# Kriterien (angelehnt an Abschnitt 3.7 der Arbeit):
+# Kriterien (angelehnt an Abschnitt 2.3 der Arbeit):
 #   Stunde gueltig : LWD >= 3 von 6 Zehnminutenwerten, GeoSphere Stundenwert
 #                    vorhanden; Wert zwischen -45 und +35 Grad C
 #   Tag gueltig    : >= 18 gueltige Stunden und keine eingefrorene Reihe

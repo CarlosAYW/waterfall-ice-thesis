@@ -1,7 +1,7 @@
-"""Validierungsabbildung v5 (Abb. 24): wie v4, aber lesbarer (Kommentar Nr. 14).
+"""Validierungsabbildung (Abb. 24).
 (a) Fotoreview, (b) Klassenvergleich mit Lesehilfe, (c) drei Beispielrouten Oktober-April
 mit Klassengrenzen. Nimmt automatisch den neuesten Export des Review-Tools.
-build_val4.py bleibt unveraendert."""
+"""
 import json, sys
 from pathlib import Path
 import matplotlib
@@ -13,7 +13,7 @@ from matplotlib.patches import Rectangle
 import numpy as np
 import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import REPO, ZWISCHEN, abbildungen, schrift  # noqa: E402
+from pfade import REPO, ZWISCHEN, abbildungen, schrift
 ABB = abbildungen(__file__)
 
 plt.rcParams.update({

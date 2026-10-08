@@ -1,4 +1,4 @@
-"""Data preparation for thesis results sections 3.3-3.6 (chunked).
+"""Data preparation for thesis results sections 3.3-3.5 (chunked).
 
 Extracts per-UID static attributes and daily driver aggregates from the
 complete UID model runs (data/ModelRuns), consistent with the section 3.2
@@ -19,7 +19,7 @@ import pandas as pd
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, bloecke  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, bloecke
 
 WORKSPACE = MA
 OUT_DIR = ZWISCHEN

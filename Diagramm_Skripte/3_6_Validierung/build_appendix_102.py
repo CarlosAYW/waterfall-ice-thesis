@@ -9,7 +9,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({

@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 """Wie stark hat welcher Faktor das Eis beeinflusst? Bereinigter Vergleich fuer Winter 2025/26.
 
-Die Spearman-Korrelationen in Abb. 23b vergleichen Routen untereinander und vermischen deshalb
+Spearman-Korrelationen zwischen Routen vermischen
 die Faktoren mit der Lage: Wind steigt mit der Hoehe, der CAP-Ueberschuss markiert Talboeden
 weit unter ihrer Station. Dieses Skript vergleicht stattdessen jede Route mit sich selbst:
 Der Eiskoerper wird aus den gespeicherten Laeufen (data/ModelRuns) nachgerechnet, einmal
@@ -45,8 +44,8 @@ import pandas as pd
 HIER = Path(__file__).resolve().parent
 sys.path.insert(0, str(HIER.parent))
 sys.path.insert(0, str(HIER))
-from pfade import REPO, ZWISCHEN, abbildungen, schrift  # noqa: E402
-import cap_kontrafaktisch as ck  # noqa: E402  (Modellkonstanten, Antrieb, Rueckhalt/Exposition)
+from pfade import REPO, ZWISCHEN, abbildungen, schrift
+import cap_kontrafaktisch as ck  # Modellkonstanten, Antrieb, Rueckhalt/Exposition
 
 RUNS = REPO / "data" / "ModelRuns"
 ASSIGN = REPO / "data" / "AWS" / "icefalls_nearest_station.csv"

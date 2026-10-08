@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Blockweise Aggregation der CAP-aktualisierten Modelllaeufe.
 Aufruf:  python recompute_chunk.py                  (alles in einem Durchgang)
          python3 recompute_chunk.py <start> <end>
@@ -10,7 +9,7 @@ import numpy as np, pandas as pd
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, bloecke  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, bloecke
 
 REPO = str(REPO)
 OUT = str(ZWISCHEN)

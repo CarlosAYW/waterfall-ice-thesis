@@ -10,7 +10,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({
@@ -70,8 +70,7 @@ axc = fig.add_subplot(gs[0, 2])
 sel = d[(d["thick_prev"] >= 0.05) & (d["TLz_mean"].between(0.5, 3.0))]
 sc = axc.scatter(sel["sw_abs_mj"], sel["melt_mm"], c=sel["TLz_mean"], cmap="coolwarm",
                  vmin=0.5, vmax=3.0, s=26, edgecolor="#2f2f2f", linewidths=0.3)
-# Datumsbeschriftung aus SUNNY/CLOUD statt fest eingetragen (bis 28.09.2026 stand hier
-# faelschlich "2026-03-05", obwohl die Werte vom 2026-02-27 stammen)
+# Datumsbeschriftung aus SUNNY/CLOUD
 for day, lab, dy in [(dc, f"{CLOUD:%Y-%m-%d}", 8), (ds, f"{SUNNY:%Y-%m-%d}", 8)]:
     axc.scatter(day["sw_abs_mj"], day["melt_mm"], s=120, facecolor="none",
                 edgecolor="#2f2f2f", linewidths=1.4, zorder=6)

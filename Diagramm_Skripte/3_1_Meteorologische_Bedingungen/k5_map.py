@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-"""Kommentar #91/#92 und #96: Karte der stratifizierten INCA-Referenzpunkte.
+"""Karte der stratifizierten INCA-Referenzpunkte (nicht mehr in der Arbeit).
 
-Die Gutachterin fragt, ob die 28 Punkte auf einer Karte zu sehen sind. Sie
-waren es bisher nicht. Die Karte zeigt dieselbe Kartengrundlage wie die
+Die Karte zeigt dieselbe Kartengrundlage wie die
 Uebersichtskarte der modellierten Eistage und markiert die Punkte nach
 Hoehenband; die beiden im letzten Screening entfernten Nordwaende sind als
 ausgeschlossen gekennzeichnet.
@@ -22,7 +20,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 BASE = MA
@@ -106,8 +104,7 @@ bt = bar_km / km_per_tile
 bx, by = x1 - bt - 0.25, y1 - 0.28
 ax.plot([bx, bx + bt], [by, by], color="#2f2f2f", lw=2.2, zorder=6)
 ax.text(bx + bt / 2, by - 0.09, f"{bar_km} km", ha="center", fontsize=7, zorder=6)
-# Nordpfeil (Graz, Kap. 4: "Bei Karten ... sind die Nordrichtung, der Massstab
-# (als Massstabsleiste) und eine vollstaendige thematische Legende anzugeben")
+# Nordpfeil
 nx = x1 - 0.16
 ny_b = y0 + 0.62
 ny_t = y0 + 0.20

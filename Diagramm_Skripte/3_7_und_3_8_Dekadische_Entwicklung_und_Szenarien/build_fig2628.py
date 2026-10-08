@@ -5,7 +5,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({
@@ -25,7 +25,7 @@ b0["season_start"] = b0["season"].str[:4].astype(int)
 bins = [-np.inf,1500,2000,2500,np.inf]
 b0["band"] = pd.cut(b0["icefall_elev_m"], bins=bins, labels=BAND_ORDER)
 
-# ================= FIG 26 (28 Punkte) =================
+# ================= dekadischer Proxy, 28 Punkte (nicht mehr in der Arbeit) =================
 cur["date"] = pd.to_datetime(cur["date"])
 md = cur["date"].dt.strftime("%m-%d")
 yr = np.where(cur["date"].dt.month >= 10, 2025, 2026)
@@ -85,7 +85,7 @@ axc.legend(fontsize=6.8, loc="lower left")
 axc.set_title("(c) All points with trend", loc="left", fontsize=9)
 einheitlich(fig); fig.savefig(ABB / "fig_3_6_decadal_proxy.png", dpi=300); plt.close(fig)
 
-# ================= FIG 28 (Trajektorien) =================
+# ================= Abb. 32 (Trajektorien) =================
 traj = json.load(open(ZWISCHEN / "traj_general.json"))
 st = json.load(open(ZWISCHEN / "traj_sites.json"))
 SITES = [("9", "Golden Shower (1097 m)"), ("252", "Sunblocker (1480 m)"),

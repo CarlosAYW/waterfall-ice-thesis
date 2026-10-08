@@ -10,7 +10,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({
@@ -81,8 +81,7 @@ bar_tiles = bar_km / km_per_tile
 bx = x1 - bar_tiles - 0.25; by = y1 - 0.28
 ax.plot([bx, bx+bar_tiles], [by, by], color="#2f2f2f", lw=2.2, zorder=6)
 ax.text(bx+bar_tiles/2, by-0.09, f"{bar_km} km", ha="center", fontsize=7, zorder=6)
-# Nordpfeil (Graz, Kap. 4: "Bei Karten ... sind die Nordrichtung, der Massstab
-# (als Massstabsleiste) und eine vollstaendige thematische Legende anzugeben")
+# Nordpfeil
 nx = x1 - 0.16
 ny_b = y0 + 0.62
 ny_t = y0 + 0.20

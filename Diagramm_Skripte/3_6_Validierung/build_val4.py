@@ -1,5 +1,5 @@
 """Validation fig v4: (a) review bars, (b) class matrix, (c) three contrasting curves.
-Panel 'thickness by class' removed per request."""
+"""
 import json
 from pathlib import Path
 import matplotlib.dates as mdates
@@ -11,7 +11,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({

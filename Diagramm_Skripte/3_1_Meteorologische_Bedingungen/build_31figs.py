@@ -6,7 +6,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({
@@ -20,9 +20,8 @@ BAND_COL = {"<1500 m": "#b4554e", "1500-2000 m": "#d0993f",
             "2000-2500 m": "#4f8fbd", ">2500 m": "#183a5a"}
 assign = pd.read_csv(REPO / "data/AWS/icefalls_nearest_station.csv")
 AU = set(assign["uid"])
-# seit 28.09.2026: Tageswerte aus den finalen Modelllaeufen (uid_daily_drivers.csv, dieselbe Quelle wie
-# die Zahlen in Kap. 3.1) statt aus der Nebenrechnung build_results_3_1_station_temperature.R mit der
-# alten CAP-Parametrisierung. FDH/PDH sind dort je 10-min-Schritt summiert -> /6 ergibt °C h.
+# Tageswerte aus den finalen Modelllaeufen (uid_daily_drivers.csv, dieselbe Quelle wie die Zahlen in Kap. 3.1).
+# FDH/PDH sind dort je 10-min-Schritt summiert -> /6 ergibt °C h.
 drv = pd.read_csv(ZWISCHEN / "uid_daily_drivers.csv", parse_dates=["date"])
 drv = drv[(drv["date"] >= "2025-10-01") & (drv["date"] <= "2026-04-30")]
 band = pd.read_csv(ZWISCHEN / "uid_static.csv").set_index("uid")["elevation_band"]
@@ -33,7 +32,7 @@ rs = rs[rs["uid"].isin(AU)]
 n = rs["uid"].nunique()
 g = rs.groupby("date")["temp_mean_c"]
 
-# ---- Fig 8: temperature distribution ----
+# ---- Fig 10: temperature distribution ----
 fig, ax = plt.subplots(figsize=(7.4, 3.6), constrained_layout=True)
 dates = sorted(rs["date"].unique())
 ax.fill_between(g.quantile(.10).index, g.quantile(.10).values, g.quantile(.90).values,
@@ -49,7 +48,7 @@ ax.xaxis.set_major_formatter(mdates.DateFormatter("%b\n%Y"))
 ax.legend(loc="lower left", ncols=3)
 einheitlich(fig); fig.savefig(ABB / "fig_3_1_station_temperature_distribution.png", dpi=300); plt.close(fig)
 
-# ---- Fig 9: freezing share ----
+# ---- Fig 11: freezing share ----
 sh_mean = rs.assign(f=rs["temp_mean_c"]<0).groupby("date")["f"].mean()*100
 sh_min  = rs.assign(f=rs["temp_min_c"]<0).groupby("date")["f"].mean()*100
 fig, ax = plt.subplots(figsize=(7.4, 3.3), constrained_layout=True)
@@ -63,7 +62,7 @@ ax.xaxis.set_major_formatter(mdates.DateFormatter("%b\n%Y"))
 ax.legend(loc="lower center", ncols=2)
 einheitlich(fig); fig.savefig(ABB / "fig_3_1_station_freezing_share.png", dpi=300); plt.close(fig)
 
-# ---- Fig 12: cumulative degree hours by band ----
+# ---- Fig 14: cumulative degree hours by band ----
 cum = rs.sort_values("date").groupby(["elevation_band","date"], observed=True)[["fdh","pdh"]].median().groupby(level=0, observed=True).cumsum().reset_index()
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.4, 3.3), constrained_layout=True, sharex=True)
 for band in BAND_ORDER:

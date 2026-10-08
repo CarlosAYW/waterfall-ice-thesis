@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-"""Kommentar 65: Wie stark wirkt der CAP-Term? Kontrafaktischer Lauf fuer Winter 2025/26.
+"""Wie stark wirkt der CAP-Term? Kontrafaktischer Lauf fuer Winter 2025/26.
 
 Idee
 ----
@@ -17,8 +16,9 @@ Alles andere bleibt identisch: dieselben Antriebsdaten (Stationen + INCA), dasse
 10-min-Raster, dieselben Horizont- und Wind-Lookups, dieselbe Schwelle 0.15 m.
 Nichts wird neu heruntergeladen.
 
-Hinweis zum Modellcode: In diagram_uid.R (Zeilen 1220 und 1227) fehlt bei
-wx$solar_core_fac der Index [i]. R bildet dadurch das Minimum ueber die ganze
+Hinweis zum Modellcode: In der Fassung von diagram_uid.R, mit der die Laeufe vom
+27.07.2026 gerechnet wurden, fehlte bei wx$solar_core_fac (heute Zeilen 1214 und
+1221) der Index [i]. R bildete dadurch das Minimum ueber die ganze
 Saison, und der Sonnenanteil der Kernschmelze und des Reserve-Abbaus ist in den
 gespeicherten Laeufen praktisch null. Dieses Skript bildet die Laeufe so nach, wie
 sie gerechnet wurden (SONNE_IM_KERN = False); nur so trifft "CAP an" die Laeufe,
@@ -30,7 +30,7 @@ Diagramm_Skripte/_zwischendaten/cap_kontra_routen.csv   je Route: Eistage, FDH, 
                                                         Mitteltemperatur fuer beide Laeufe, Differenzen,
                                                         CAP-Groessen, Hoehe, Exposition
 Diagramm_Skripte/_zwischendaten/cap_kontra_tage.csv     Tagesmedian der Dicke, beide Laeufe
-Diagramm_Skripte/_zwischendaten/westwind_routentage.csv Kommentar 70: Windfaktor an Frosttagen
+Diagramm_Skripte/_zwischendaten/westwind_routentage.csv Windfaktor an Frosttagen
 <Kapitelordner>/abbildungen/cap_kontrafaktisch_kennzahlen.txt  Zahlen fuer Text und Bildunterschrift
 Danach wird build_3_34.py gestartet; Abb. 20c zeigt dann den Vergleich.
 
@@ -52,7 +52,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import REPO, ZWISCHEN, abbildungen  # noqa: E402
+from pfade import REPO, ZWISCHEN, abbildungen
 
 RUNS = REPO / "data" / "ModelRuns"
 ASSIGN = REPO / "data" / "AWS" / "icefalls_nearest_station.csv"
@@ -81,7 +81,7 @@ def clamp01(x):
 
 
 def route_factors(dz_m, path_barrier_m, topo_pos_diff):
-    """Rueckhalt- und Expositionsfaktor wie in diagram_uid.R (Zeilen 1170-1176)."""
+    """Rueckhalt- und Expositionsfaktor wie in diagram_uid.R (Zeilen 1164-1170)."""
     if not np.isfinite(path_barrier_m):
         path_barrier_m = 80.0
     if not np.isfinite(topo_pos_diff):
@@ -185,7 +185,7 @@ def one_route(args):
                cap_delta=float(df["cap_delta"].iloc[0]), cap_pair_confidence=float(df["cap_pair_confidence"].iloc[0]),
                cap_potential=float(df["cap_icefall"].iloc[0]), z_target_m=float(df["z_target_m"].iloc[0]),
                retention=ret, exposure=exp_)
-    # Kommentar 70: Windfaktor an Frosttagen je Tag, mit Tages-Windrichtung
+    # Windfaktor an Frosttagen je Tag, mit Tages-Windrichtung
     df["frost"] = df["FDH"] > 0
     rows = []
     for dte, gdf in df.groupby("date"):
@@ -276,7 +276,7 @@ def main():
     L.append(f"  Anteil Zeitschritte > 1 K: {100*R.cap_share_steps_gt1K.mean():.1f} %; Anteil Routentage mit Tagesmittel > 1 K: {100*R.cap_share_days_gt1K.mean():.1f} %")
     L.append(f"  Anteil Zeitschritte mit f_stab > 0.5: {100*R.fstab_share_gt05.mean():.1f} %")
     L.append("")
-    # Kommentar 70
+    # Windfaktor an Frosttagen
     def sector(d):
         d = d % 360
         return "N" if (d >= 315 or d < 45) else "E" if d < 135 else "S" if d < 225 else "W"

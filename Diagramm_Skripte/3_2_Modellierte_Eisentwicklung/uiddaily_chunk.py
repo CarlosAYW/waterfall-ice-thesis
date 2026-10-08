@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Cache im Schema von modelled_ice_uid_daily.csv, blockweise.
 Aufruf: python uiddaily_chunk.py (alles) | python3 uiddaily_chunk.py <start> <end> | finalize
 """
@@ -6,7 +5,7 @@ import glob, os, re, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))       # build_results_3_2_modelled_ice.py
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # pfade.py
-from pfade import REPO, ZWISCHEN  # noqa: E402
+from pfade import REPO, ZWISCHEN
 import pandas as pd
 import build_results_3_2_modelled_ice as B
 

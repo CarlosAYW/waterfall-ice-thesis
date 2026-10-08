@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import OUTPUT, ZWISCHEN  # noqa: E402
+from pfade import OUTPUT, ZWISCHEN
 
 BASE = OUTPUT / "results_3_1_meteorological_conditions" / "inca_winter_reference"
 BLOCKDIR = ZWISCHEN / "_bloecke_grid"

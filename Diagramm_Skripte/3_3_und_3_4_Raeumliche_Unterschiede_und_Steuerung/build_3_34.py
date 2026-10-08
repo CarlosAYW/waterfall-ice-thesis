@@ -9,7 +9,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({
@@ -100,7 +100,7 @@ ax2.set_title("(b) Climbable-ice days by elevation", loc="left", fontsize=9)
 einheitlich(fig); fig.savefig(ABB / "fig_3_3_elevation.png", dpi=300); plt.close(fig)
 
 # =============== FIG 3.3-2: aspect / sun / CAP ===============
-fig, axes = plt.subplots(1, 3, figsize=(7.4, 3.35), constrained_layout=True)   # 3.1 -> 3.35 fuer die Legende darunter
+fig, axes = plt.subplots(1, 3, figsize=(7.4, 3.35), constrained_layout=True)
 axa, axb, axc = axes
 
 order = ["N", "E", "S", "W"]
@@ -126,8 +126,7 @@ axb.set_ylim(0, float(seas["good_days"].max()) * 1.16)   # Kopffreiheit fuer das
 axb.set_xlabel("Mean DJF topographic sun window (h/d)")
 axb.set_title("(b) Winter sun exposure", loc="left", fontsize=9)
 
-# (c) Kommentar 65: Wirkung des CAP-Terms aus dem kontrafaktischen Lauf (cap_kontrafaktisch.py).
-# Frueher: Eistage nach Terzilen des CAP-Surplus (konfundiert mit der Hoehe).
+# (c) Wirkung des CAP-Terms aus dem kontrafaktischen Lauf (cap_kontrafaktisch.py).
 capk = ZWISCHEN / "cap_kontra_routen.csv"
 if not capk.exists():
     sys.exit("cap_kontra_routen.csv fehlt - zuerst cap_kontrafaktisch.py laufen lassen.")
@@ -146,8 +145,7 @@ axc.text(0.03, 0.95, f"rho = {rho_cap:.2f}", transform=axc.transAxes, va="top", 
 axc.set_xlabel("CAP surplus \u03b4CAP (\u2013)")
 axc.set_ylabel("\u0394 climbable-ice days (CAP on \u2212 off)")
 axc.set_title("(c) Effect of the CAP term", loc="left", fontsize=9)
-# Kommentar 27.09.2026: Die Legende unten links in (b) verdeckte Punkte der untersten Hoehenstufe.
-# Jetzt eine gemeinsame Legende fuer (b) und (c) unter der Abbildung.
+# Gemeinsame Legende fuer (b) und (c) unter der Abbildung.
 hb, lb = axb.get_legend_handles_labels()
 fig.legend(hb, lb, loc="outside lower center", ncol=4, fontsize=7.6, markerscale=1.5,
            handletextpad=0.3, columnspacing=1.8)
@@ -194,7 +192,7 @@ ax2.axvline(0, color="#2f2f2f", lw=0.8, ls="--")
 ax2.set_xlabel("Daily mean TLz (°C)")
 ax2.set_ylabel("Melt-day share (%)")
 ax2.set_ylim(0, 100)
-ax2.set_xlim(-5.6, 5.6)                      # Kommentar 68: auf den Uebergangsbereich zuschneiden
+ax2.set_xlim(-5.6, 5.6)                      # auf den Uebergangsbereich zuschneiden
 ax2.set_xticks(range(-5, 6))
 ax2.legend(fontsize=7.3, title="Topographic sun window", title_fontsize=7.3, loc="upper left")
 ax2.set_title("(b) Spring melt share by sun exposure (ice present)", loc="left", fontsize=9)
@@ -220,7 +218,7 @@ fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.4, 3.9), constrained_layout=True
                                gridspec_kw={"width_ratios": [1, 1.3]})
 for band in BAND_ORDER:
     sub = seas[seas["elevation_band"] == band]
-    # FDH_tot ist die Summe je 10-min-Schritt; /6 -> °C h, /1000 -> 10³ °C h (bis 28.09.2026 fehlte /6)
+    # FDH_tot ist die Summe je 10-min-Schritt; /6 -> °C h, /1000 -> 10³ °C h
     ax1.scatter(sub["FDH_tot"] / 6000, sub["peak_m"], s=13, color=BAND_COL[band],
                 alpha=0.65, lw=0, label=band)
 rho_fdh = seas[["FDH_tot", "peak_m"]].corr(method="spearman").iloc[0, 1]
@@ -230,10 +228,10 @@ ax1.set_ylabel("Seasonal peak thickness (m)")
 ax1.legend(fontsize=6.6, loc="lower right", handletextpad=0.15)
 ax1.set_title("(a) Thermal forcing vs. peak thickness", loc="left", fontsize=9)
 
-# (b) seit 27.09.2026: statt der Spearman-Balken die direkte Wirkung der Faktoren je Route
+# (b) direkte Wirkung der Faktoren je Route
 # (faktoren_kontrafaktisch.py: jede Route ohne den Faktor nachgerechnet, +-1 K als Massstab).
 # Die Spearman-Tabelle wird oben weiter berechnet (spearman_controls.csv, Zahlen im Text).
-import faktoren_kontrafaktisch as fk  # noqa: E402
+import faktoren_kontrafaktisch as fk
 fkcsv = ZWISCHEN / "faktoren_kontra_routen.csv"
 if not fkcsv.exists():
     sys.exit("faktoren_kontra_routen.csv fehlt - zuerst faktoren_kontrafaktisch.py laufen lassen.")
@@ -244,7 +242,7 @@ ax2.set_title(f"(b) Direct effect per route (n = {len(FR)})", loc="left", fontsi
 einheitlich(fig); fig.savefig(ABB / "fig_3_4_seasonal_controls.png", dpi=300); plt.close(fig)
 
 # =============== stats for text ===============
-# Terzile des CAP-Surplus (fruehere Abb. 20c), nur noch als Vergleichswert in stats_3_3_3_4.json
+# Terzile des CAP-Surplus als Vergleichswert in stats_3_3_3_4.json
 capq = seas.dropna(subset=["cap_delta_positive"]).copy()
 capq["cap_grp"] = pd.qcut(capq["cap_delta_positive"], 3, labels=["weak", "moderate", "strong"])
 def med_iqr(s):

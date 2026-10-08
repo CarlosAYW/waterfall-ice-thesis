@@ -1,5 +1,5 @@
-"""Abb. 27 (frueher Anhang A1): Eiswelt Taschachschlucht (UID 102) — Modell vs. Fotoreview.
-v2: Dickenangaben der Fotos werden aus den Modelllaeufen berechnet statt fest eingetragen."""
+"""Abb. 27: Eiswelt Taschachschlucht (UID 102) — Modell vs. Fotoreview.
+Dickenangaben der Fotos werden aus den Modelllaeufen berechnet."""
 from pathlib import Path
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
@@ -10,7 +10,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({
@@ -23,7 +23,7 @@ U = REPO / "analysis/Icefall_validation/UIDs/102 _ Eiswelt Taschachschlucht Pitz
 
 df = pd.read_csv(REPO / "data/ModelRuns/model_uid102.csv", usecols=["date", "thickness_m"], low_memory=False)
 df["date"] = pd.to_datetime(df["date"])
-s = df.groupby("date")["thickness_m"].median().loc["2025-10-01":"2026-04-30"]   # seit 28.09.2026 Untersuchungszeitraum
+s = df.groupby("date")["thickness_m"].median().loc["2025-10-01":"2026-04-30"]   # Untersuchungszeitraum
 
 CASES = [("2025-12-11", "model_too_little_ice"), ("2025-12-21", "model_too_little_ice"),
          ("2025-12-27", "model_too_little_ice"), ("2026-02-06", "matches"), ("2026-04-03", "matches")]

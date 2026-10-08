@@ -26,11 +26,8 @@ local({
 })
 # -------------------------------------------------------------------------------
 
-# Abb. 12 und 13 der Arbeit (Stand 28.09.2026)
-# Nachbau von fig4/fig5 aus build_results_3_1_station_temperature.R, aber
-#  - nur fuer die 303 Routen der Arbeit (icefalls_nearest_station.csv); die Nebenrechnung
-#    lief ueber alle 325 Routen des alten Inventars,
-#  - Einheiten mit Hochzahlen (m s⁻¹, MJ m⁻² d⁻¹) und Gedankenstrich im Perzentilbereich.
+# Abb. 12 und 13 der Arbeit
+# Nur die 303 Routen der Arbeit (icefalls_nearest_station.csv).
 # Abb. 12: Tageswerte je Route aus station_temperature_daily_route_summary.csv
 #          (Stationsfeuchte, INCA-Wind und -Globalstrahlung; von der CAP-Parametrisierung unabhaengig).
 # Abb. 13: topographisches Sonnenfenster je Route und Tag aus _zwischendaten/uid_daily_drivers.csv
@@ -100,7 +97,6 @@ fig4 <- ggplot(forcing_long, aes(date)) +
   geom_line(aes(y = median), color = "#045a8d", linewidth = 0.75) +
   facet_wrap(~ variable, ncol = 1, scales = "free_y") +
   scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-  # seit 29.09.2026 ohne Titel, Untertitel und Legendenzeile (steht in der Bildunterschrift der Arbeit)
   labs(x = NULL, y = NULL) +
   theme_thesis()
 ggsave(file.path(out_dir, "fig_3_1_station_humidity_wind_radiation.png"), fig4,
@@ -122,7 +118,6 @@ fig5 <- ggplot(sun_dist, aes(date)) +
   geom_ribbon(aes(ymin = sun_p25, ymax = sun_p75), fill = "#e6550d", alpha = 0.32) +
   geom_line(aes(y = sun_median), color = "#a63603", linewidth = 0.8) +
   scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-  # seit 29.09.2026 ohne Titel, Untertitel und Legendenzeile (steht in der Bildunterschrift der Arbeit)
   labs(x = NULL, y = "Topographic sun hours per day") +
   theme_thesis()
 ggsave(file.path(out_dir, "fig_3_1_station_topographic_sun_hours.png"), fig5,

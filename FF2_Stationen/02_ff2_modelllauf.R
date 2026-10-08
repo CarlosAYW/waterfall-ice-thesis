@@ -3,13 +3,13 @@
 # ----------------------------------------------------------------------------
 # Rechnet das Eismodell (scripts/diagram_uid.R) fuer die Routen aus Schritt 1
 # in jedem Winter, in dem ihre Station belastbare Temperaturdaten liefert, und
-# erzeugt danach Kennzahlen, Tabellen und Abbildungen fuer Kapitel 3.7.
+# erzeugt danach Kennzahlen, Tabellen und Abbildungen fuer Kapitel 3.6.
 #
 # Eingaben je Route und Winter (wie Winter 2025/26, ausser der Feuchte):
 #   Lufttemperatur    zugeordnete Station, geprueft in Schritt 1 (cache/),
 #                     Stundenmittel linear auf 10 min interpoliert
-#   rel. Feuchte      INCA RH2M am Routenpunkt (bisher: Station)
-#   Wind, Strahlung   INCA UU/VV/GL am Routenpunkt (wie bisher)
+#   rel. Feuchte      INCA RH2M am Routenpunkt
+#   Wind, Strahlung   INCA UU/VV/GL am Routenpunkt
 #   Inversion         scripts/00_build_inversion_cache.R je Winter
 #   Sonne/Topographie Sonnenzeiten aus data/suntime auf das Kalenderdatum
 #                     des jeweiligen Winters uebertragen

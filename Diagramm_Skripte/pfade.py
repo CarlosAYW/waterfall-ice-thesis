@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Gemeinsame Pfade und Einstellungen fuer alle Diagramm-Skripte.
 
 Alle Pfade werden aus der Lage dieses Ordners abgeleitet. Die Skripte laufen
@@ -12,7 +11,7 @@ SKRIPTE = Path(__file__).resolve().parent          # .../Masterarbeit/Diagramm_S
 MA = SKRIPTE.parent                                # .../Masterarbeit
 REPO = MA / "Ice fall modeling" / "GutHub" / "ice-waterfalls"
 OUTPUT = MA / "output"
-ZWISCHEN = SKRIPTE / "_zwischendaten"              # ersetzt die frueheren /tmp-Dateien
+ZWISCHEN = SKRIPTE / "_zwischendaten"
 ZWISCHEN.mkdir(exist_ok=True)
 
 
@@ -39,7 +38,7 @@ def bloecke(n, groesse):
 
 
 # ---------------------------------------------------------------------------
-# Einheitliche Beschriftung (seit 28.09.2026)
+# Einheitliche Beschriftung
 # Wird in den Abbildungsskripten direkt vor fig.savefig() aufgerufen und bringt
 # alle Texte der Abbildung auf die Schreibweise der Arbeit:
 #   T_ice statt TLz (TLz ist nur der Spaltenname im Modellcode), °C statt deg C,

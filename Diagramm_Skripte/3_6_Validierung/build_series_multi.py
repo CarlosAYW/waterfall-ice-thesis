@@ -1,4 +1,4 @@
-"""Fig-23-style photo series for several icefalls (candidate versions)."""
+"""Photo series with modelled ice thickness (Fig. 25, 26)."""
 from pathlib import Path
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
@@ -9,7 +9,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, abbildungen, schrift, einheitlich
 ABB = abbildungen(__file__)   # Abbildungen landen in <Kapitelordner>/abbildungen
 
 plt.rcParams.update({
@@ -28,7 +28,7 @@ def series(uid):
     df = pd.read_csv(REPO / f"data/ModelRuns/model_uid{uid}.csv",
                      usecols=["date", "thickness_m"], low_memory=False)
     df["date"] = pd.to_datetime(df["date"])
-    # seit 28.09.2026 auf den Untersuchungszeitraum begrenzt wie die uebrigen Abbildungen
+    # auf den Untersuchungszeitraum begrenzt
     return df.groupby("date")["thickness_m"].median().loc["2025-10-01":"2026-04-30"]
 
 CAND = {

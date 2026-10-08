@@ -1,19 +1,15 @@
-# -*- coding: utf-8 -*-
 """Kap. 3.1, Abb. 15: Wie ungewoehnlich war der Winter 2025/26?
 
-Aufbau wie die fruehere INCA-Abbildung (build_inca_winter_reference.R,
-fig_3_1_inca_reference_winter_metrics.png): neun Kennzahlen, Boxplots der
-Referenzwinter 2012/13-2024/25, roter Punkt fuer 2025/26. Geaendert ist die
-Datengrundlage der Temperatur:
+Neun Kennzahlen: Boxplots der Referenzwinter 2012/13-2024/25, roter Punkt fuer 2025/26.
 
 (a)-(e) Temperatur: dieselbe routenuebertragene Stationstemperatur, die das
-        Modell antreibt, aus dem Vierzehn-Winter-Lauf von Kap. 3.7
+        Modell antreibt, aus dem Vierzehn-Winter-Lauf von Kap. 3.6
         (FF2_Stationen/ergebnis_modell/tageswerte_voll.rds). Routen an
         homogenen Stationen (route_trends.csv) mit gueltigen Daten in allen
         14 Wintern (feste Zusammensetzung, 107 Routen). Kennzahl je Route und
         Winter, dann Median ueber die Routen.
 (f)-(i) Niederschlag und Globalstrahlung: INCA an den 28 geschichteten
-        Referenzpunkten (Kap. 3.8, Tab. 4), aus inca_reference_point_daily.csv
+        Referenzpunkten (Kap. 3.7), aus inca_reference_point_daily.csv
         von build_inca_winter_reference.R. Die zwei als Nordwand
         umklassifizierten Routen (UID 280, 699) sind ausgeschlossen, Routen in
         derselben INCA-Zelle zaehlen einmal. Tageswerte werden ueber die
@@ -39,7 +35,7 @@ import pandas as pd
 import pyreadr
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, OUTPUT, abbildungen, schrift  # noqa: E402
+from pfade import MA, OUTPUT, abbildungen, schrift
 
 ABB = abbildungen(__file__)
 FF2 = MA / "FF2_Stationen" / "ergebnis_modell"
@@ -125,7 +121,7 @@ comp.to_csv(ABB / "station_reference_comparison.csv", index=False, float_format=
 print(f"Temperatur: {len(fixed)} Routen; INCA: {len(keep)} Punkte (Median je Tag {int(inca.n_points.median())})")
 print(comp.to_string(index=False, float_format=lambda v: f"{v:.2f}"))
 
-# ------------------------------------------------ Abbildung (Stil der R-Fassung)
+# ------------------------------------------------ Abbildung
 BOX_FILL, BOX_EDGE, RED = "#d9e2ec", "#52616b", "#b13d2e"
 fig, axs = plt.subplots(3, 3, figsize=(7.4, 6.0))
 for ax, (m, title, src) in zip(axs.ravel(), METRICS):
@@ -148,10 +144,6 @@ for ax, (m, title, src) in zip(axs.ravel(), METRICS):
     ax.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(
         lambda v, _p: f"{v:,.0f}".replace(",", " ").replace("-", "−") if abs(v) >= 100 or v == int(v)
         else f"{v:.1f}".replace("-", "−")))
-# seit 29.09.2026 ohne Titel, Untertitel und Quellenzeile in der Abbildung – alles steht in der
-# Bildunterschrift der Arbeit (Abb. 15); frueher:
-#   Titel "How unusual was winter 2025/26?", Untertitel "Red points show 2025/26; boxplots show
-#   reference winters 2012/13–2024/25", Quellenzeile zu (a)–(e) und (f)–(i)
 fig.subplots_adjust(left=0.08, right=0.985, top=0.95, bottom=0.03, hspace=0.32, wspace=0.28)
 fig.savefig(ABB / "fig_3_1_station_winter_reference.png", dpi=300, facecolor="white")
 print("Abbildung:", ABB / "fig_3_1_station_winter_reference.png")

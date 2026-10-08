@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """CAP-Kalibrierung mit stabilitaetsabhaengiger Lapse Rate.
 
 Bisher:  resid_K = dT_obs + gamma_fix * dz          -> Regression auf dcap*gate
@@ -18,7 +17,7 @@ import pandas as pd
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from pfade import MA, REPO, OUTPUT, ZWISCHEN, bloecke  # noqa: E402
+from pfade import MA, REPO, OUTPUT, ZWISCHEN, bloecke
 
 REPO = str(REPO)
 OUT = str(ZWISCHEN)
