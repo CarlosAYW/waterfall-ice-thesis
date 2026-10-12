@@ -1,4 +1,4 @@
-CAP-Kontrafaktum, Winter 2025/26, 4 Routen (c_CAP 6.5 K gegen 0), Stand 2026-09-25 11:40
+CAP-Kontrafaktum, Winter 2025/26, 4 Routen (c_CAP 6.5 K gegen 0)
 Nachbau 'CAP an' gegen gespeicherte Laeufe: max. Abweichung 2.3e-15 m
 
 Eistage (>= 0.15 m), CAP an minus aus:  Median +1.0, IQR +0.8 bis +1.0, Spanne +0.0 bis +1.0

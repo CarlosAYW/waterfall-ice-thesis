@@ -253,7 +253,7 @@ def main():
     W.to_csv(ZWISCHEN / f"westwind_routentage{sfx}.csv", index=False, float_format="%.5g")
 
     # ---------------- Kennzahlen
-    L = [f"CAP-Kontrafaktum, Winter 2025/26, {len(R)} Routen (c_CAP 6.5 K gegen 0), Stand {time.strftime('%Y-%m-%d %H:%M')}",
+    L = [f"CAP-Kontrafaktum, Winter 2025/26, {len(R)} Routen (c_CAP 6.5 K gegen 0)",
          f"Nachbau 'CAP an' gegen gespeicherte Laeufe: max. Abweichung {R['abweichung_gespeichert_m'].max():.1e} m", ""]
     def q(s):
         return f"Median {s.median():+.1f}, IQR {s.quantile(.25):+.1f} bis {s.quantile(.75):+.1f}, Spanne {s.min():+.1f} bis {s.max():+.1f}"

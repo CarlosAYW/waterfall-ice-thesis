@@ -1,4 +1,4 @@
-Faktoren-Kontrafaktum, Winter 2025/26, 303 Routen, Stand 2026-09-27 13:13
+Faktoren-Kontrafaktum, Winter 2025/26, 303 Routen
 Nachbau 'voll' gegen gespeicherte Laeufe: max. Abweichung 1.5e-14 m
 
 Wirkung auf die Eistage (>= 0.15 m); Faktoren: mit minus ohne; Referenz: gestoerter minus voller Lauf

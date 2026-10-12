@@ -226,7 +226,7 @@ def kennzahlen(R, ABB, sfx, t0):
     def q(s):
         return (f"Median {s.median():+.1f}, IQR {s.quantile(.25):+.1f} bis {s.quantile(.75):+.1f}, "
                 f"5-95 % {s.quantile(.05):+.1f} bis {s.quantile(.95):+.1f}, Mittel {s.mean():+.1f}")
-    L = [f"Faktoren-Kontrafaktum, Winter 2025/26, {len(R)} Routen, Stand {time.strftime('%Y-%m-%d %H:%M')}",
+    L = [f"Faktoren-Kontrafaktum, Winter 2025/26, {len(R)} Routen",
          f"Nachbau 'voll' gegen gespeicherte Laeufe: max. Abweichung {R['abweichung_gespeichert_m'].max():.1e} m", "",
          "Wirkung auf die Eistage (>= 0.15 m); Faktoren: mit minus ohne; Referenz: gestoerter minus voller Lauf"]
     for col, lab in ZEILEN + REF:

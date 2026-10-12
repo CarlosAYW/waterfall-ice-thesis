@@ -54,7 +54,7 @@ waterfall-ice-thesis/                          ← repository root (the author's
 │   │   └── abbildungen/                       (in every section folder) figure files as used in the thesis
 │   ├── Archiv_Cold-Air-Pooling-Korrektur/     – CAP recalibration; no longer in the thesis, kept for the record
 │   ├── _zwischendaten/                        frozen intermediate data read by the figure scripts
-│   └── README.md                              German working log (figure numbers there are outdated)
+│   └── README.md                              short guide to the folder (figure index: main README)
 │
 ├── FF2_Stationen/                             DECADAL RUNS 2012/13–2025/26 (§ 2.3, § 3.6)
 │   ├── 01_stationscheck.R                     station availability and coverage
@@ -296,7 +296,6 @@ flowchart LR
 - The batch script for the thesis model runs is not preserved; README 4.3 gives a loop that calls the model in the same way (untested).
 - Regenerated PNGs are visually identical to the thesis figures but not byte-identical.
 - Some script names carry version suffixes (`_v2`, `_v5`); the figure index names the version used.
-- `Diagramm_Skripte/README.md` is the author's German working log; use the figure index above.
 
 ## 9 Citation and licence
 
